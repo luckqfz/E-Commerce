@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchandise Spiderman - Toko Cozy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="kontainer-nav">
+    <a href="index.html" class="logo-toko">Toko Cozy</a>
+    <button class="tombol-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="menu-nav" id="menuNavbar">
+      <li class="item-menu"><a href="index.html" class="link-menu">Beranda</a></li>
+      <li class="item-menu"><a href="elektronik.html" class="link-menu">Elektronik</a></li>
+      <li class="item-menu"><a href="jepangan.html" class="link-menu">Jejepangan</a></li>
+      <li class="item-menu"><a href="game.html" class="link-menu">Beli Game</a></li>
+      <li class="item-menu"><a href="spiderman.html" class="link-menu aktif">Spiderman</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="header-halaman">
+  <h1 class="judul-utama">Merchandise Spiderman</h1>
+  <p class="subjudul">Koleksi Eksklusif untuk Para Penggemar Spider-Man</p>
+</header>
+
+<div class="banner-promo">
+  Koleksi terbaru Marvel dan Spiderman - Edisi terbatas tersedia!
+</div>
+
+<div class="kontainer">
+  <h2 class="judul-seksi">Koleksi Spiderman Pilihan</h2>
+  <div class="grid-produk" id="daftarProduk"></div>
+</div>
+
+<aside class="keranjang-belanja">
+  <h3 class="judul-keranjang">Keranjang Belanja</h3>
+  <div id="itemKeranjang">
+    <div class="keranjang-kosong">Keranjang masih kosong</div>
+  </div>
+  <div id="totalKeranjang"></div>
+  <button class="tombol tombol-checkout" onclick="checkout()">
+    Checkout via WhatsApp
+  </button>
+  <button class="tombol tombol-kosongkan tersembunyi" onclick="kosongkanKeranjang()" id="tombolKosongkan">
+    Kosongkan Keranjang
+  </button>
+</aside>
+
+<footer class="footer">
+  <p class="teks-footer">Alamat: <strong>Jl. AkKangenKm No.1, Yogyakarta</strong></p>
+  <p class="teks-footer">WhatsApp: <strong>0814-1035-4213</strong></p>
+  <p class="teks-footer copyright">
+    &copy; 2025 Toko Cozy. Melayani dengan Hangat dan Tulus
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
