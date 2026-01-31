@@ -89,7 +89,7 @@ const audioPlayer = {
 // Data produk untuk setiap kategori
 const dataProduk = {
   elektronik: [
-    { nama: "Samsung S25 Ultra", harga: 15500000, gambar: "../assets/images/elektronik/HPS25U.jpeg" },
+    { nama: "Samsung S25 Ultra", harga: 15500000, gambar: "../.../assets/images/elektronik/HPS25U.jpeg" },
     { nama: "iPhone 17 Pro Max", harga: 23900000, gambar: "../assets/images/elektronik/HP17PM.jpeg" },
     { nama: "RedMagic 11 Pro", harga: 13000000, gambar: "../assets/images/elektronik/HP11PRO.jpeg" },
     { nama: "Vivo X300 Pro", harga: 18500000, gambar: "../assets/images/elektronik/HPX300PRO.jpeg" },
@@ -475,4 +475,5 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
+
 }
