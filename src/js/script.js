@@ -89,26 +89,26 @@ const audioPlayer = {
 // Data produk untuk setiap kategori
 const dataProduk = {
   elektronik: [
-    { nama: "Samsung S25 Ultra", harga: 15500000, gambar: "../.../assets/images/elektronik/HPS25U.jpeg" },
-    { nama: "iPhone 17 Pro Max", harga: 23900000, gambar: "../assets/images/elektronik/HP17PM.jpeg" },
-    { nama: "RedMagic 11 Pro", harga: 13000000, gambar: "../assets/images/elektronik/HP11PRO.jpeg" },
-    { nama: "Vivo X300 Pro", harga: 18500000, gambar: "../assets/images/elektronik/HPX300PRO.jpeg" },
-    { nama: "Huawei Pura 80 Ultra", harga: 2900000, gambar: "../assets/images/elektronik/HP80ULTRA.jpeg" },
-    { nama: "Lenovo LOQ 15", harga: 500000, gambar: "../assets/images/elektronik/LPLOQ.jpeg" },
-    { nama: "Asus TUF A15", harga: 750000, gambar: "../assets/images/elektronik/LPTUF.jpeg" },
-    { nama: "Lenovo Legion 5", harga: 350000, gambar: "../assets/images/elektronik/LPLEGION.jpeg" },
-    { nama: "Asus ROG Strix", harga: 1200000, gambar: "../assets/images/elektronik/LPROG.jpeg" },
-    { nama: "Macbook Pro M4 16''", harga: 900000, gambar: "../assets/images/elektronik/LPMacbook.jpeg" },
-    { nama: "Mechanical Keyboard", harga: 450000, gambar: "../assets/images/elektronik/keyboard.jpg" },
-    { nama: "Mouse Macro", harga: 650000, gambar: "../assets/images/elektronik/mouse.jpg" },
-    { nama: "Wireless Headset", harga: 400000, gambar: "../assets/images/elektronik/headset.jpg" },
-    { nama: "Microphone", harga: 850000, gambar: "../assets/images/elektronik/mic.jpg" },
-    { nama: "Speaker Stereo", harga: 1200000, gambar: "../assets/images/elektronik/speaker.jpg" },
-    { nama: "Webcam HD", harga: 3500000, gambar: "../assets/images/elektronik/webcam.jpg" },
-    { nama: "Kursi Gaming", harga: 300000, gambar: "../assets/images/elektronik/kursi.jpeg" },
-    { nama: "Deskmate", harga: 250000, gambar: "../assets/images/elektronik/deskmate.jpg" },
-    { nama: "Monitor 16''", harga: 5200000, gambar: "../assets/images/elektronik/monitor.jpg" },
-    { nama: "Monitor Arm", harga: 700000, gambar: "../assets/images/elektronik/monitorarm.jpg" }
+    { nama: "Samsung S25 Ultra", harga: 15500000, gambar: "../assets/images/Elektronik/HPS25U.jpeg" },
+    { nama: "iPhone 17 Pro Max", harga: 23900000, gambar: "../assets/images/Elektronik/HP17PM.jpeg" },
+    { nama: "RedMagic 11 Pro", harga: 13000000, gambar: "../assets/images/Elektronik/HP11PRO.jpeg" },
+    { nama: "Vivo X300 Pro", harga: 18500000, gambar: "../assets/images/Elektronik/HPX300PRO.jpeg" },
+    { nama: "Huawei Pura 80 Ultra", harga: 2900000, gambar: "../assets/images/Elektronik/HP80ULTRA.jpeg" },
+    { nama: "Lenovo LOQ 15", harga: 500000, gambar: "../assets/images/Elektronik/LPLOQ.jpeg" },
+    { nama: "Asus TUF A15", harga: 750000, gambar: "../assets/images/Elektronik/LPTUF.jpeg" },
+    { nama: "Lenovo Legion 5", harga: 350000, gambar: "../assets/images/Elektronik/LPLEGION.jpeg" },
+    { nama: "Asus ROG Strix", harga: 1200000, gambar: "../assets/images/Elektronik/LPROG.jpeg" },
+    { nama: "Macbook Pro M4 16''", harga: 900000, gambar: "../assets/images/Elektronik/LPMacbook.jpeg" },
+    { nama: "Mechanical Keyboard", harga: 450000, gambar: "../assets/images/Elektronik/keyboard.jpg" },
+    { nama: "Mouse Macro", harga: 650000, gambar: "../assets/images/Elektronik/mouse.jpg" },
+    { nama: "Wireless Headset", harga: 400000, gambar: "../assets/images/Elektronik/headset.jpg" },
+    { nama: "Microphone", harga: 850000, gambar: "../assets/images/Elektronik/mic.jpg" },
+    { nama: "Speaker Stereo", harga: 1200000, gambar: "../assets/images/Elektronik/speaker.jpg" },
+    { nama: "Webcam HD", harga: 3500000, gambar: "../assets/images/Elektronik/webcam.jpg" },
+    { nama: "Kursi Gaming", harga: 300000, gambar: "../assets/images/Elektronik/kursi.jpeg" },
+    { nama: "Deskmate", harga: 250000, gambar: "../assets/images/Elektronik/deskmate.jpg" },
+    { nama: "Monitor 16''", harga: 5200000, gambar: "../assets/images/Elektronik/monitor.jpg" },
+    { nama: "Monitor Arm", harga: 700000, gambar: "../assets/images/Elektronik/monitorarm.jpg" }
   ],
   bahan_baku: [
     { nama: "Kaldu Jamur 12 Sachet", harga: 450000, gambar: "../assets/images/bahanbaku/kaldujamur.jpg" },
@@ -477,3 +477,4 @@ if (document.readyState === 'loading') {
   initApp();
 
 }
+
