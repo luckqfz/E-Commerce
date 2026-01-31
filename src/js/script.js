@@ -98,7 +98,7 @@ const dataProduk = {
     { nama: "Asus TUF A15", harga: 750000, gambar: "../assets/images/Elektronik/LPTUF.jpeg" },
     { nama: "Lenovo Legion 5", harga: 350000, gambar: "../assets/images/Elektronik/LPLEGION.jpeg" },
     { nama: "Asus ROG Strix", harga: 1200000, gambar: "../assets/images/Elektronik/LPROG.jpeg" },
-    { nama: "Macbook Pro M4 16''", harga: 900000, gambar: "../assets/images/Elektronik/LPMacbook.jpeg" },
+    { nama: "Macbook Pro M4 16''", harga: 900000, gambar: "../assets/images/Elektronik/LPMACBOOK.jpeg" },
     { nama: "Mechanical Keyboard", harga: 450000, gambar: "../assets/images/Elektronik/keyboard.jpg" },
     { nama: "Mouse Macro", harga: 650000, gambar: "../assets/images/Elektronik/mouse.jpg" },
     { nama: "Wireless Headset", harga: 400000, gambar: "../assets/images/Elektronik/headset.jpg" },
@@ -477,6 +477,7 @@ if (document.readyState === 'loading') {
   initApp();
 
 }
+
 
 
 
