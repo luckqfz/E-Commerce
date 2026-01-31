@@ -138,7 +138,7 @@ const dataProduk = {
     { nama: "Elden Ring", harga: 899000, gambar: "../assets/images/Game/EldenRing.jpg" },
     { nama: "Black Myth: Wukong", harga: 900000, gambar: "../assets/images/Game/BlackMythWukong.jpg" },
     { nama: "FarCry: 6", harga: 799000, gambar: "../assets/images/Game/Farcry6.jpg" },
-    { nama: "Cyberpunk 2077", harga: 899000, gambar: "../assets/images/Game/cyberPunk2077.jpg" },
+    { nama: "Cyberpunk 2077", harga: 899000, gambar: "../assets/images/Game/CyberPunk2077.jpg" },
     { nama: "Assasin's Creed: Origins", harga: 399000, gambar: "../assets/images/Game/AssasinCreed.jpg" },
     { nama: "Hogwarts Legacy", harga: 899000, gambar: "../assets/images/Game/HogwartsLegacy.jpg" },
     { nama: "Marvel Spiderman: Remasted", harga: 900000, gambar: "../assets/images/Game/MarvelSpiderman.jpg" },
@@ -477,6 +477,7 @@ if (document.readyState === 'loading') {
   initApp();
 
 }
+
 
 
 
