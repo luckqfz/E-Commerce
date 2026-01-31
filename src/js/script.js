@@ -133,7 +133,7 @@ const dataProduk = {
     { nama: "Chocolate 1 Box", harga: 480000, gambar: "../assets/images/bahanBaku/COKLATBAR.jpg" }
   ],
   game: [
-    { nama: "Grand Theft Auto: V", harga: 699000, gambar: "../../assets/images/Game/GTAV.jpg" },
+    { nama: "Grand Theft Auto: V", harga: 699000, gambar: "../assets/images/Game/GTAV.jpg" },
     { nama: "Red Dead Redemption 2", harga: 879000, gambar: "../assets/images/Game/RDR2.jpg" },
     { nama: "Elden Ring", harga: 899000, gambar: "../assets/images/Game/EldenRing.jpg" },
     { nama: "Black Myth: Wukong", harga: 900000, gambar: "../assets/images/Game/BlackMythWukong.jpg" },
@@ -477,5 +477,6 @@ if (document.readyState === 'loading') {
   initApp();
 
 }
+
 
 
