@@ -2327,8 +2327,10 @@ body {
 @media (max-width: 600px) {
   .logo-img{
     height: 30px;
+    margin-left: -10px;
   }
   .logo-toko{
     font-size: 18px;
+   margin-left: -10px;
   }
 }
