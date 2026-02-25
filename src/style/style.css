@@ -2323,3 +2323,12 @@ body {
   width: auto;
   object-fit: contain;
 }
+
+@media (max-width: 600px) {
+  .logo-img{
+    height: 30px;
+  }
+  .logo-toko{
+    font-size: 18px;
+  }
+}
