@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Koleksi Bahan baku terlengkap di Toko Ludonanzak">
+  <meta name="theme-color" content="#6b5444">
+  <link rel="icon" type="image/jpeg" href="src/assets/images/logo.jpeg">
+  
+  <title>Katalog Game - Toko Ludonanzak</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="src/assets/images/logo.jpeg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="kontainer-nav">
+      <a href="index.html" class="logo-toko">
+        <img src="src/assets/images/logo.jpeg" alt="Ludonanzak" class="logo-img">
+        <span>Ludonanzak</span>
+      </a>
+      
+      <!-- Search Bar (Desktop) -->
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Cari Bahan..." id="searchInput">
+        <span class="search-icon">🔍</span>
+      </div>
+      
+      <!-- Menu Navigasi Desktop -->
+      <nav class="desktop-menu">
+        <a href="index.html" class="desktop-link">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-tooltip">Beranda</span>
+        </a>
+        <a href="elektronik.html" class="desktop-link">
+          <span class="nav-icon">💻</span>
+          <span class="nav-tooltip">Elektronik</span>
+        </a>
+        <a href="bahan_baku.html" class="desktop-link aktif">
+          <span class="nav-icon">🥬</span>
+          <span class="nav-tooltip">Bahan Baku</span>
+        </a>
+        <a href="game.html" class="desktop-link">
+          <span class="nav-icon">🎮</span>
+          <span class="nav-tooltip">Game</span>
+        </a>
+        <a href="diy_give.html" class="desktop-link">
+          <span class="nav-icon">🎁</span>
+          <span class="nav-tooltip">DIY Give</span>
+        </a>
+        <a href="buku.html" class="desktop-link">
+          <span class="nav-icon">📖</span>
+          <span class="nav-tooltip">Buku</span>
+        </a>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <!-- Dark Mode Toggle -->
+        <button class="action-btn" id="themeToggle" aria-label="Toggle Dark Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        
+        <!-- Wishlist -->
+        <button class="action-btn" id="wishlistBtn" aria-label="Wishlist">
+          <span class="icon">❤️</span>
+          <span class="badge" id="wishlistBadge">0</span>
+        </button>
+        
+        <!-- Cart -->
+        <button class="action-btn" id="cartBtn" aria-label="Keranjang">
+          <span class="icon">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </button>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">🏠 Beranda</a>
+      <a href="elektronik.html" class="mobile-link">💻 Elektronik</a>
+      <a href="bahan_baku.html" class="mobile-link">🥬 Bahan Baku</a>
+      <a href="game.html" class="mobile-link aktif">🎮 Game</a>
+      <a href="diy_give.html" class="mobile-link">🎁 DIY Give</a>
+      <a href="buku.html" class="mobile-link">📖 Buku</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="header-background">
+      <div class="header-pattern"></div>
+    </div>
+    <div class="header-content">
+      <span class="header-tag">🥬 Bahan-Baku Collection</span>
+      <h1 class="page-title">Katalog Bahan-Baku</h1>
+      <p class="page-subtitle">Perlengkapan memasak lengkap dan murah</p>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <section class="product-section">
+    <div class="kontainer">
+      
+      <!-- Filter & Sort Bar -->
+      <div class="filter-bar">
+        <div class="filter-left">
+          <button class="filter-btn active" data-filter="all">
+            <span>🎯</span> Semua Bahan
+          </button>
+          <button class="filter-btn" data-filter="populer">
+            <span>🔥</span> Populer
+          </button>
+          <button class="filter-btn" data-filter="murah">
+            <span>💰</span> Harga Murah
+          </button>
+        </div>
+        
+        <div class="filter-right">
+          <select class="sort-select" id="sortSelect">
+            <option value="default">Urutkan</option>
+            <option value="name-asc">Nama A-Z</option>
+            <option value="name-desc">Nama Z-A</option>
+            <option value="price-asc">Harga Terendah</option>
+            <option value="price-desc">Harga Tertinggi</option>
+          </select>
+          
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">
+              <span>⊞</span>
+            </button>
+            <button class="view-btn" data-view="list">
+              <span>☰</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be inserted here by JavaScript -->
+      </div>
+      
+      <!-- Empty State -->
+      <div class="empty-results" id="emptyResults" style="display: none;">
+        <span class="empty-icon">🔍</span>
+        <h3>Tidak ada produk ditemukan</h3>
+        <p>Coba ubah filter atau pencarian Anda</p>
+      </div>
+      
+      <!-- Loading State -->
+      <div class="loading-state" id="loadingState">
+        <div class="skeleton-grid">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>🛍️ Toko Ludonanzak</h3>
+        <p>Belanja nyaman, berkualitas, dan modern</p>
+      </div>
+      
+      <div class="footer-info">
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p>📍 Jl. AkKangenKm No.1, Yogyakarta</p>
+          <p>📱 0856-9531-8450</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Jam Operasional</h4>
+          <p>Senin - Sabtu: 09:00 - 21:00</p>
+          <p>Minggu: 10:00 - 18:00</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toko Ludonanzak.</p>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-overlay" id="quickViewOverlay"></div>
+    <div class="modal-content modal-large">
+      <button class="modal-close" id="closeQuickView">×</button>
+      <div class="quick-view-content" id="quickViewContent">
+        <!-- Quick view content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Wishlist Modal -->
+  <div class="modal" id="wishlistModal">
+    <div class="modal-overlay" id="wishlistOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>❤️ Favorit Saya</h3>
+        <button class="modal-close" id="closeWishlist">×</button>
+      </div>
+      <div class="modal-body" id="wishlistContent">
+        <div class="empty-state">
+          <span class="empty-icon">💔</span>
+          <p>Belum ada produk favorit</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-overlay" id="cartOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🛒 Keranjang Belanja</h3>
+        <button class="modal-close" id="closeCart">×</button>
+      </div>
+      <div class="modal-body" id="cartContent">
+        <div class="empty-state">
+          <span class="empty-icon">🛍️</span>
+          <p>Keranjang masih kosong</p>
+        </div>
+      </div>
+      <div class="modal-footer" id="cartFooter" style="display: none;">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotalPrice">Rp 0</span>
+        </div>
+        <button class="btn btn-primary" id="checkoutBtn">
+          <span>✅ Checkout via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module" src="src/js/script.js"></script>
+</body>
+</html>

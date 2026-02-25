@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Toko Ludonanzak - Belanja elektronik, bahan baku, game, dan hadiah dengan pengalaman modern">
+  <meta name="theme-color" content="#6b5444">
+  
+  <title>Toko Ludonanzak - Modern E-Commerce Experience</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="src/assets/images/logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="kontainer-nav">
+      <a href="index.html" class="logo-toko">
+        <img src="src/assets/images/logo.jpeg" alt="Ludonanzak" class="logo-img">
+        <span>Ludonanzak</span>
+      </a>
+      
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Cari produk..." id="searchInput">
+        <span class="search-icon">🔍</span>
+      </div>
+      
+      <nav class="desktop-menu">
+        <a href="index.html" class="desktop-link aktif">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-tooltip">Beranda</span>
+        </a>
+        <a href="elektronik.html" class="desktop-link">
+          <span class="nav-icon">💻</span>
+          <span class="nav-tooltip">Elektronik</span>
+        </a>
+        <a href="bahan_baku.html" class="desktop-link">
+          <span class="nav-icon">🥬</span>
+          <span class="nav-tooltip">Bahan Baku</span>
+        </a>
+        <a href="game.html" class="desktop-link">
+          <span class="nav-icon">🎮</span>
+          <span class="nav-tooltip">Game</span>
+        </a>
+        <a href="diy_give.html" class="desktop-link">
+          <span class="nav-icon">🎁</span>
+          <span class="nav-tooltip">DIY Give</span>
+        </a>
+        <a href="buku.html" class="desktop-link">
+          <span class="nav-icon">📖</span>
+          <span class="nav-tooltip">Buku</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="action-btn" id="themeToggle" aria-label="Toggle Dark Mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="action-btn" id="wishlistBtn" aria-label="Wishlist">
+          <span class="icon">❤️</span>
+          <span class="badge" id="wishlistBadge">0</span>
+        </button>
+        <button class="action-btn" id="cartBtn" aria-label="Keranjang">
+          <span class="icon">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link aktif">🏠 Beranda</a>
+      <a href="elektronik.html" class="mobile-link">💻 Elektronik</a>
+      <a href="bahan_baku.html" class="mobile-link">🥬 Bahan Baku</a>
+      <a href="game.html" class="mobile-link">🎮 Game</a>
+      <a href="diy_give.html" class="mobile-link">🎁 DIY Give</a>
+      <a href="buku.html" class="mobile-link">📖 Buku</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-background">
+      <div class="hero-pattern"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Selamat Datang di
+        <span class="gradient-text">Toko Ludonanzak</span>
+      </h1>
+      <p class="hero-subtitle">
+        Pengalaman belanja modern dengan koleksi terlengkap untuk kebutuhan Anda
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Produk</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Kategori</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Pelayanan</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll untuk eksplorasi</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <div class="kontainer">
+      <div class="section-header">
+        <span class="section-tag">Tentang Kami</span>
+        <h2 class="section-title">Belanja dengan Pengalaman Berbeda</h2>
+      </div>
+      
+      <div class="welcome-grid">
+        <div class="welcome-card">
+          <div class="welcome-icon">⚡</div>
+          <h3>Cepat & Mudah</h3>
+          <p>Proses pemesanan yang simpel dan checkout langsung via WhatsApp</p>
+        </div>
+        <div class="welcome-card">
+          <div class="welcome-icon">💎</div>
+          <h3>Kualitas Terjamin</h3>
+          <p>Semua produk dipilih dengan standar kualitas terbaik</p>
+        </div>
+        <div class="welcome-card">
+          <div class="welcome-icon">🎯</div>
+          <h3>Harga Kompetitif</h3>
+          <p>Dapatkan produk berkualitas dengan harga yang bersahabat</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROMO BANNER (diisi JS) ===== -->
+  <section class="banner-section">
+    <div id="promoBanner"></div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS (diisi JS) ===== -->
+  <section class="featured-section" id="featuredSection"></section>
+
+  <!-- ===== DISKON SECTION (diisi JS) ===== -->
+  <section class="diskon-section" id="diskonSection"></section>
+
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <div class="kontainer">
+      <div class="section-header">
+        <span class="section-tag">Koleksi Kami</span>
+        <h2 class="section-title">Jelajahi Kategori Produk</h2>
+      </div>
+      
+      <div class="grid-kategori">
+        <a href="elektronik.html" class="kartu-kategori" data-category="elektronik">
+          <div class="kategori-image">
+            <span class="kategori-icon">💻</span>
+          </div>
+          <div class="kategori-content">
+            <h3 class="kategori-title">Elektronik</h3>
+            <p class="kategori-desc">Gadget & perangkat teknologi terkini</p>
+            <span class="kategori-arrow">→</span>
+          </div>
+          <div class="kategori-badge">20+ Items</div>
+        </a>
+        
+        <a href="bahan_baku.html" class="kartu-kategori" data-category="bahan-baku">
+          <div class="kategori-image">
+            <span class="kategori-icon">🥬</span>
+          </div>
+          <div class="kategori-content">
+            <h3 class="kategori-title">Bahan Baku</h3>
+            <p class="kategori-desc">Bahan masak berkualitas & segar</p>
+            <span class="kategori-arrow">→</span>
+          </div>
+          <div class="kategori-badge">20+ Items</div>
+        </a>
+        
+        <a href="game.html" class="kartu-kategori" data-category="game">
+          <div class="kategori-image">
+            <span class="kategori-icon">🎮</span>
+          </div>
+          <div class="kategori-content">
+            <h3 class="kategori-title">Game Digital</h3>
+            <p class="kategori-desc">Koleksi game untuk semua platform</p>
+            <span class="kategori-arrow">→</span>
+          </div>
+          <div class="kategori-badge">20+ Items</div>
+        </a>
+        
+        <a href="diy_give.html" class="kartu-kategori" data-category="diy">
+          <div class="kategori-image">
+            <span class="kategori-icon">🎁</span>
+          </div>
+          <div class="kategori-content">
+            <h3 class="kategori-title">DIY Give</h3>
+            <p class="kategori-desc">Hadiah unik & personalized</p>
+            <span class="kategori-arrow">→</span>
+          </div>
+          <div class="kategori-badge">20+ Items</div>
+        </a>
+
+        <a href="diy_give.html" class="kartu-kategori" data-category="diy">
+          <div class="kategori-image">
+            <span class="kategori-icon">📖</span>
+          </div>
+          <div class="kategori-content">
+            <h3 class="kategori-title">Buku</h3>
+            <p class="kategori-desc">Perpustakaan mini</p>
+            <span class="kategori-arrow">→</span>
+          </div>
+          <div class="kategori-badge">20+ Items</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="kontainer">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">📦</div>
+          <h4>Stok Terjaga</h4>
+          <p>Update real-time ketersediaan produk</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💳</div>
+          <h4>Pembayaran Mudah</h4>
+          <p>Konfirmasi cepat via WhatsApp</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚀</div>
+          <h4>Proses Cepat</h4>
+          <p>Checkout dalam hitungan detik</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎨</div>
+          <h4>Personalisasi</h4>
+          <p>Sesuaikan dengan kebutuhan Anda</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>🛍️ Toko Ludonanzak</h3>
+        <p>Belanja nyaman, berkualitas, dan modern</p>
+      </div>
+      <div class="footer-info">
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p>📍 Jl. AkKangenKm No.1, Yogyakarta</p>
+          <p>📱 0856-9531-8450</p>
+        </div>
+        <div class="footer-section">
+          <h4>Jam Operasional</h4>
+          <p>Senin - Sabtu: 09:00 - 21:00</p>
+          <p>Minggu: 10:00 - 18:00</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toko Ludonanzak.</p>
+    </div>
+  </footer>
+
+  <!-- Wishlist Modal -->
+  <div class="modal" id="wishlistModal">
+    <div class="modal-overlay" id="wishlistOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>❤️ Favorit Saya</h3>
+        <button class="modal-close" id="closeWishlist">×</button>
+      </div>
+      <div class="modal-body" id="wishlistContent">
+        <div class="empty-state">
+          <span class="empty-icon">💔</span>
+          <p>Belum ada produk favorit</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-overlay" id="cartOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>🛒 Keranjang Belanja</h3>
+        <button class="modal-close" id="closeCart">×</button>
+      </div>
+      <div class="modal-body" id="cartContent">
+        <div class="empty-state">
+          <span class="empty-icon">🛍️</span>
+          <p>Keranjang masih kosong</p>
+        </div>
+      </div>
+      <div class="modal-footer" id="cartFooter" style="display: none;">
+        <div class="cart-total">
+          <div>
+            <span>Total Dipilih</span>
+            <span id="cartSelectedCount" style="font-size:13px; color: var(--color-text-muted);"></span>
+          </div>
+          <span id="cartTotalPrice">Rp 0</span>
+        </div>
+        <button class="btn btn-primary" id="checkoutBtn">
+          <span>✅ Checkout via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/js/script.js"></script>
+</body>
+</html>
