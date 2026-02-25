@@ -2,7 +2,7 @@
 //  Struktur file:
 //
 //  src/js/
-//  ├── script.js          ← (ini) entry point
+//  ├── script.js          ← (inii) entry point
 //  ├── data/
 //  │   └── products.js    ← semua data produk
 //  ├── modules/
