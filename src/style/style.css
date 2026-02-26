@@ -304,8 +304,8 @@ body {
 
 .action-btn {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 37px;
+  height: 37px;
   border: none;
   border-radius: var(--radius-full);
   background: var(--color-surface);
@@ -2327,8 +2327,10 @@ body {
 @media (max-width: 600px) {
   .logo-img{
     height: 30px;
+    margin-left: -10px;
   }
   .logo-toko{
     font-size: 18px;
+   margin-left: -10px;
   }
 }
