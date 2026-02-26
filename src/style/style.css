@@ -300,13 +300,12 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: -15px;
 }
 
 .action-btn {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 37px;
+  height: 37px;
   border: none;
   border-radius: var(--radius-full);
   background: var(--color-surface);
@@ -315,7 +314,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 20px;
   transition: all var(--transition-base);
   border: 2px solid var(--color-border);
 }
@@ -364,8 +363,8 @@ body {
   display: none;
   flex-direction: column;
   gap: 5px;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--color-border);
@@ -376,7 +375,7 @@ body {
 }
 
 .menu-toggle span {
-  width: 15px;
+  width: 22px;
   height: 2px;
   background: var(--color-text);
   border-radius: 2px;
@@ -2330,6 +2329,6 @@ body {
   height: 30px;
 }
   .logo-toko {
-    font-size: 18;
+    font-size: 13px;
   }
 }
