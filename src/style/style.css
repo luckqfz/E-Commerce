@@ -300,6 +300,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: -15px;
 }
 
 .action-btn {
@@ -2322,4 +2323,13 @@ body {
   height: 40px;
   width: auto;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+  height: 30px;
+}
+  .logo-toko {
+    font-size: 18;
+  }
 }
