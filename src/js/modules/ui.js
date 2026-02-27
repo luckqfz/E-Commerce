@@ -89,11 +89,11 @@ function buildMiniCard(produk) {
         ${buildHargaHTML(produk)}
         <div class="mini-card-actions">
           <button class="btn btn-sm btn-primary"
-                  onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "\\'")}, event)'>
+                  onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "&#39;")}, event)'>
             🛒
           </button>
           <button class="btn btn-sm btn-checkout"
-                  onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "\\'")})'>
+                  onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "&#39;")})'>
             ⚡ Beli
           </button>
         </div>
@@ -136,12 +136,12 @@ export const UI = {
 
           <button class="wishlist-btn ${Wishlist.adaDiFavorit(produk.id) ? 'active' : ''}"
                   data-product-id="${produk.id}"
-                  onclick='Wishlist.toggle(${JSON.stringify(produk).replace(/'/g, "\\'")}); event.stopPropagation();'>
+                  onclick='Wishlist.toggle(${JSON.stringify(produk).replace(/'/g, "&#39;")}); event.stopPropagation();'>
             ❤️
           </button>
 
           <button class="quick-view-btn"
-                  onclick='UI.tampilkanQuickView(${JSON.stringify(produk).replace(/'/g, "\\'")})'>
+                  onclick='UI.tampilkanQuickView(${JSON.stringify(produk).replace(/'/g, "&#39;")})'>
             👁️ Quick View
           </button>
         </div>
@@ -151,12 +151,12 @@ export const UI = {
           ${buildHargaHTML(produk)}
           <div class="product-actions">
             <button class="btn btn-primary"
-                    onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "\\'")}, event); event.stopPropagation();'>
+                    onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "&#39;")}, event); event.stopPropagation();'>
               <span>🛒</span>
               <span>Tambah</span>
             </button>
             <button class="btn btn-checkout"
-                    onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "\\'")}); event.stopPropagation();'>
+                    onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "&#39;")}); event.stopPropagation();'>
               <span>Beli Langsung</span>
             </button>
           </div>
@@ -175,32 +175,31 @@ export const UI = {
     if (!modal || !konten) return;
 
     konten.innerHTML = `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-        <div style="position: relative;">
-          <img src="${produk.gambar}" alt="${produk.nama}"
-               style="width: 100%; border-radius: 12px;"
+      <div class="qv-grid">
+        <div class="qv-image-wrapper">
+          <img src="${produk.gambar}" alt="${produk.nama}" class="qv-image"
                onerror="this.src='https://via.placeholder.com/400?text=No+Image'">
           ${produk.diskon ? `<span class="qv-discount-badge">-${produk.diskon}% OFF</span>` : ''}
         </div>
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <h2 style="font-size: 28px; font-weight: 700;">${produk.nama}</h2>
+        <div class="qv-details">
+          <h2 class="qv-title">${produk.nama}</h2>
           <div>
             ${buildHargaHTML(produk, 'large')}
           </div>
-          <p style="color: var(--color-text-secondary); line-height: 1.6;">
-            ${produk.nama} – Produk berkualitas dengan harga terbaik di kelasnya.
+          <p class="qv-description">
+            ${produk.deskripsi}
           </p>
-          <div style="display: flex; gap: 12px; margin-top: auto; flex-wrap: wrap;">
-            <button class="btn btn-primary" style="flex: 1;"
-                    onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "\\'")}, event)'>
+          <div class="qv-actions">
+            <button class="btn btn-secondary"
+                    onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "&#39;")}, event)'>
               🛒 Tambah ke Keranjang
             </button>
-            <button class="btn btn-checkout" style="flex: 1;"
-                    onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "\\'")})'>
+            <button class="btn btn-primary"
+                    onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "&#39;")})'>
               ⚡ Beli Langsung
             </button>
             <button class="btn btn-secondary"
-                    onclick='Wishlist.toggle(${JSON.stringify(produk).replace(/'/g, "\\'")});
+                    onclick='Wishlist.toggle(${JSON.stringify(produk).replace(/'/g, "&#39;")});
                              this.textContent = Wishlist.adaDiFavorit("${produk.id}") ? "❤️ Favorit" : "🤍 Favorit";'>
               ${window.Wishlist?.adaDiFavorit(produk.id) ? '❤️' : '🤍'} Favorit
             </button>
