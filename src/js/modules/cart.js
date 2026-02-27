@@ -116,15 +116,6 @@ export const Cart = {
     }
   },
 
-  /** Ubah deskripsi produk */
-  ubahDeskripsi(idProduk, deskripsi) {
-    const item = state.cart.find(item => item.id === idProduk);
-    if (item) {
-      item.deskripsi = deskripsi;
-      this.simpan();
-    }
-  },
-
   /** Toggle centang/batal centang satu item */
   toggleCheck(idProduk) {
     if (this._checkedIds.has(idProduk)) {
@@ -246,7 +237,6 @@ export const Cart = {
                     : `<span class="cart-price-final">Rp ${utils.formatRupiah(hargaBayar)}</span>`
                   }
                 </div>
-                <textarea class="cart-item-description" onchange="Cart.ubahDeskripsi('${item.id}', this.value)">${item.deskripsi || ''}</textarea>
                 <div class="cart-item-controls">
                   <button class="qty-btn" onclick="Cart.ubahJumlah('${item.id}', -1)">−</button>
                   <span class="qty-value">${item.quantity}</span>
@@ -308,7 +298,6 @@ export const Cart = {
       const hargaBayar = item.hargaBayar ?? item.harga;
       const subtotal   = hargaBayar * item.quantity;
       pesan += `${index + 1}. ${item.nama}`;
-      if (item.deskripsi) pesan += `%0A   Deskripsi: ${item.deskripsi}`;
       if (item.diskon) pesan += ` *(Diskon ${item.diskon}%)*`;
       if (item.quantity > 1) pesan += ` x${item.quantity}`;
       pesan += `%0A   Rp ${utils.formatRupiah(hargaBayar)}`;
@@ -331,7 +320,6 @@ export const Cart = {
     const hargaBayar = hargaSetelahDiskon(produk);
     let pesan = `*Halo, saya ingin membeli:*%0A%0A`;
     pesan += `1. ${produk.nama}`;
-    if (produk.deskripsi) pesan += `%0A   Deskripsi: ${produk.deskripsi}`;
     if (produk.diskon) pesan += ` *(Diskon ${produk.diskon}%)*`;
     pesan += `%0A   Rp ${utils.formatRupiah(hargaBayar)}%0A%0A`;
     pesan += `*Total: Rp ${utils.formatRupiah(hargaBayar)}*%0A%0A`;
