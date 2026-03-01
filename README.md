@@ -7,7 +7,7 @@
 
 ## 📌 Deskripsi Proyek
 
-**E-Commerce Web** adalah sebuah website toko online yang dibuat sebagai tugas akhir mata pelajaran Pemrograman Web. Website ini menampilkan berbagai kategori produk yang dapat dilihat dan dipilih oleh pengguna, dibangun menggunakan teknologi web dasar seperti HTML, CSS, dan JavaScript.
+**E-Commerce Ludonanzak** adalah sebuah website toko online yang dibuat sebagai tugas akhir mata pelajaran Pemrograman Web. Website ini menggunakan tema coklat-orange (Cozy Theme) dan menampilkan berbagai kategori produk yang dapat dilihat dan dipilih oleh pengguna, dibangun menggunakan teknologi web dasar seperti HTML, CSS, dan JavaScript.
 
 ---
 
@@ -23,6 +23,25 @@ Website ini memiliki beberapa halaman kategori produk, antara lain:
 | `buku.html` | Kategori produk buku |
 | `bahan_baku.html` | Kategori bahan baku |
 | `diy_give.html` | Kategori produk DIY / hadiah |
+
+---
+
+## ✨ Fitur Utama
+
+### 🛍️ Belanja
+- **Keranjang Belanja** — Tambah, hapus, dan kelola produk sebelum checkout
+- **Diskon Produk** — Tampilan harga coret dan persentase diskon pada produk tertentu
+
+### 🔍 Pencarian & Navigasi
+- **Pencarian Produk** — Cari produk dengan cepat menggunakan search bar
+- **Sort / Urutkan Item** — Urutkan produk berdasarkan harga, nama, atau lainnya
+
+### 📦 Produk
+- **Deskripsi Produk** — Penjelasan singkat produk ditampilkan pada setiap item
+
+### 🎨 Tampilan
+- **Dark Mode / Light Mode** — Tema terang dan gelap yang bisa diubah sesuai preferensi pengguna
+- **Responsive Design** — Tampilan menyesuaikan berbagai ukuran layar (mobile, tablet, desktop)
 
 ---
 
