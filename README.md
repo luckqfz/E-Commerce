@@ -91,7 +91,7 @@ E-Commerce/
 
 1. Buka Browser Kalian
 
-2. [Kunjungi Website](https://luckqfz.github.io/E-Commerce)
+2. Kunjungi Website [luckqfz.github.io/E-Commerce](https://luckqfz.github.io/E-Commerce)
 
 ---
 
