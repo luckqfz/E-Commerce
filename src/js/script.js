@@ -12,7 +12,8 @@
 //  │   ├── filter.js      ← filter, sort, search
 //  │   └── theme.js       ← dark / light mode
 //  └── utils/
-//      └── helpers.js     ← CONFIG, state, utils (format, debounce, storage)
+//      ├── helpers.js     ← CONFIG, state, utils (format, debounce, storage)
+//      └── sound.js       ← sound effect
 //
 // ============================================================
 
