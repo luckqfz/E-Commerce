@@ -2037,13 +2037,13 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.4);
+  background: var(--color-text-muted);
   cursor: pointer;
   transition: all var(--transition-base);
 }
 
 .dot.active {
-  background: white;
+  background: var(--color-text);
   width: 24px;
   border-radius: 4px;
 }
