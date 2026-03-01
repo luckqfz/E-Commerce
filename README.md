@@ -81,7 +81,7 @@ E-Commerce/
 ### Cara Pertama
 1. Clone repository ini:
    ```bash
-   git clone https://github.com/luckqfz/E-Commerce.git
+   git clone https://github.com/luckqfz/E-Commerce
    ```
 
 2. Masuk ke folder proyek:
