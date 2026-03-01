@@ -68,7 +68,7 @@ E-Commerce/
 ├── bahan_baku.html
 ├── diy_give.html
 ├── src/
-│   ├── (assets, gambar, dll)
+│   ├── (assets, js, css)
 ├── .vscode/
 └── .github/
     └── workflows/
