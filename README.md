@@ -74,9 +74,9 @@ E-Commerce/
 | | |
 |---|---|
 | **Nama** | Lucky Ferdiansyah        |      
-|----------| Mohammad Rizqi Rivaldo   |
-|----------| Dzaki Aditya Abaar       |
-|----------| Muhammad Nandar Basillah |
+| | Mohammad Rizqi Rivaldo   |
+| | Dzaki Aditya Abaar       |
+| | Muhammad Nandar Basillah |
 | **Kelas** | 11 TKJ 3 |
 | **Mata Pelajaran** | TKJ Pilihan / Pemrograman Web |
 | **Jenis Tugas** | Tugas Akhir |
