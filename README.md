@@ -74,6 +74,7 @@ E-Commerce/
 
 ## 🚀 Cara Menjalankan
 
+### Cara Pertama
 1. Clone repository ini:
    ```bash
    git clone https://github.com/luckqfz/E-Commerce.git
@@ -85,6 +86,12 @@ E-Commerce/
    ```
 
 3. Buka file `index.html` di browser favorit kamu, atau gunakan ekstensi **Live Server** di VS Code.
+
+### Cara Kedua
+
+1. Buka Browser Kalian
+
+2. Masuk Ke Link luckqfz.github.io/E-Commerce
 
 ---
 
