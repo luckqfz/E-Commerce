@@ -20,10 +20,22 @@
 </head>
 
 <body>
+    <!-- PAGE LOADER -->
+  <div id="pageLoader">
+    <div class="loader-logo">
+      <div class="loader-logo-icon">🎮</div>
+      <div class="loader-logo-text">Ludonanzak</div>
+    </div>
+    <div class="loader-bar-wrapper">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-text">Memuat koleksi game...</div>
+  </div>
+  
   <!-- Toast Notification Container -->
   <div id="toastContainer" class="toast-container"></div>
 
-  <!-- Navigation -->
+  <!-- ═══ NAVBAR UTAMA ═══ -->
   <nav class="navbar" id="navbar">
     <div class="kontainer-nav">
       <a href="index.html" class="logo-toko">
@@ -31,60 +43,23 @@
         <span>Ludonanzak</span>
       </a>
       
-      <!-- Search Bar (Desktop) -->
       <div class="search-wrapper">
-        <input type="text" class="search-input" placeholder="Cari Bahan..." id="searchInput">
+        <input type="text" class="search-input" placeholder="Cari game..." id="searchInput">
         <span class="search-icon">🔍</span>
       </div>
-      
-      <!-- Menu Navigasi Desktop -->
-      <nav class="desktop-menu">
-        <a href="index.html" class="desktop-link">
-          <span class="nav-icon">🏠</span>
-          <span class="nav-tooltip">Beranda</span>
-        </a>
-        <a href="elektronik.html" class="desktop-link">
-          <span class="nav-icon">💻</span>
-          <span class="nav-tooltip">Elektronik</span>
-        </a>
-        <a href="bahan_baku.html" class="desktop-link aktif">
-          <span class="nav-icon">🥬</span>
-          <span class="nav-tooltip">Bahan Baku</span>
-        </a>
-        <a href="game.html" class="desktop-link">
-          <span class="nav-icon">🎮</span>
-          <span class="nav-tooltip">Game</span>
-        </a>
-        <a href="diy_give.html" class="desktop-link">
-          <span class="nav-icon">🎁</span>
-          <span class="nav-tooltip">DIY Give</span>
-        </a>
-        <a href="buku.html" class="desktop-link">
-          <span class="nav-icon">📖</span>
-          <span class="nav-tooltip">Buku</span>
-        </a>
-      </nav>
 
-      <!-- Navigation Actions -->
       <div class="nav-actions">
-        <!-- Dark Mode Toggle -->
         <button class="action-btn" id="themeToggle" aria-label="Toggle Dark Mode">
           <span class="theme-icon">🌙</span>
         </button>
-        
-        <!-- Wishlist -->
         <button class="action-btn" id="wishlistBtn" aria-label="Wishlist">
           <span class="icon">❤️</span>
           <span class="badge" id="wishlistBadge">0</span>
         </button>
-        
-        <!-- Cart -->
         <button class="action-btn" id="cartBtn" aria-label="Keranjang">
           <span class="icon">🛒</span>
           <span class="badge" id="cartBadge">0</span>
         </button>
-        
-        <!-- Mobile Menu Toggle -->
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
           <span></span>
           <span></span>
@@ -92,15 +67,35 @@
         </button>
       </div>
     </div>
-    
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-link">🏠 Beranda</a>
-      <a href="elektronik.html" class="mobile-link">💻 Elektronik</a>
-      <a href="bahan_baku.html" class="mobile-link">🥬 Bahan Baku</a>
-      <a href="game.html" class="mobile-link aktif">🎮 Game</a>
-      <a href="diy_give.html" class="mobile-link">🎁 DIY Give</a>
-      <a href="buku.html" class="mobile-link">📖 Buku</a>
+
+  <!-- ═══ CATEGORY NAVBAR (di bawah navbar utama) ═══ -->
+  <nav class="category-navbar" id="categoryNavbar">
+    <div class="category-nav-inner">
+      <a href="index.html" class="cat-link">
+        <span class="cat-icon">🏠</span>
+        <span>Beranda</span>
+      </a>
+      <div class="cat-divider"></div>
+      <a href="elektronik.html" class="cat-link">
+        <span class="cat-icon">💻</span>
+        <span>Elektronik</span>
+      </a>
+      <a href="bahan_baku.html" class="cat-link">
+        <span class="cat-icon">🥬</span>
+        <span>Bahan Baku</span>
+      </a>
+      <a href="game.html" class="cat-link aktif">
+        <span class="cat-icon">🎮</span>
+        <span>Game</span>
+      </a>
+      <a href="diy_give.html" class="cat-link">
+        <span class="cat-icon">🎁</span>
+        <span>DIY Give</span>
+      </a>
+      <a href="buku.html" class="cat-link">
+        <span class="cat-icon">📖</span>
+        <span>Buku</span>
+      </a>
     </div>
   </nav>
 

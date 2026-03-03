@@ -139,9 +139,10 @@ E-Commerce/
 | Versi | Keterangan |
 |---|---|
 | v1.0 | Rilis awal — halaman utama dan kategori produk |
-| v1.1 | Penambahan fitur keranjang belanja |
-| v1.2 | Penambahan Dark Mode dan fitur pencarian |
-| v1.3 | Penyempurnaan responsive design dan fitur sorting |
+| v1.1 | Penambahan fitur langsung checkout |
+| v1.2 | Penambahan produk di homepage |
+| v1.3 | Penambahan fitur checklist produk |
+| v1.4 | Re-desain tampilan menjadi modern |
 
 ---
 
@@ -159,8 +160,8 @@ E-Commerce/
 | **Kelas** | 11 TKJ 3 |
 | **Mata Pelajaran** | TKJ Pilihan / Pemrograman Web |
 | **Jenis Tugas** | Tugas Akhir |
-| **Sekolah** | *(nama sekolah)* |
-| **Tahun** | 2024 / 2025 |
+| **Sekolah** | SMK Negeri 1 Kab. Tangerang |
+| **Tahun** | 2025 / 2026 |
 
 ---
 

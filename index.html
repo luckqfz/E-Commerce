@@ -4,22 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Toko Ludonanzak - Belanja elektronik, bahan baku, game, dan hadiah dengan pengalaman modern">
-  <meta name="theme-color" content="#6b5444">
+  <meta name="theme-color" content="#f97316">
   
   <title>Toko Ludonanzak - E-Commerce Mini</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/jpeg" href="src/assets/images/logo.jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="src/style/style.css">
 </head>
 
 <body>
+  <!-- PAGE LOADER -->
+  <div id="pageLoader">
+    <div class="loader-logo">
+      <div class="loader-logo-icon">🛍️</div>
+      <div class="loader-logo-text">Ludonanzak</div>
+    </div>
+    <div class="loader-bar-wrapper">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-text">Memuat pengalaman belanja...</div>
+  </div>
+
   <div id="toastContainer" class="toast-container"></div>
 
-  <!-- Navigation -->
+  <!-- ═══ NAVBAR UTAMA ═══ -->
   <nav class="navbar" id="navbar">
     <div class="kontainer-nav">
       <a href="index.html" class="logo-toko">
@@ -31,33 +43,6 @@
         <input type="text" class="search-input" placeholder="Cari produk..." id="searchInput">
         <span class="search-icon">🔍</span>
       </div>
-      
-      <nav class="desktop-menu">
-        <a href="index.html" class="desktop-link aktif">
-          <span class="nav-icon">🏠</span>
-          <span class="nav-tooltip">Beranda</span>
-        </a>
-        <a href="elektronik.html" class="desktop-link">
-          <span class="nav-icon">💻</span>
-          <span class="nav-tooltip">Elektronik</span>
-        </a>
-        <a href="bahan_baku.html" class="desktop-link">
-          <span class="nav-icon">🥬</span>
-          <span class="nav-tooltip">Bahan Baku</span>
-        </a>
-        <a href="game.html" class="desktop-link">
-          <span class="nav-icon">🎮</span>
-          <span class="nav-tooltip">Game</span>
-        </a>
-        <a href="diy_give.html" class="desktop-link">
-          <span class="nav-icon">🎁</span>
-          <span class="nav-tooltip">DIY Give</span>
-        </a>
-        <a href="buku.html" class="desktop-link">
-          <span class="nav-icon">📖</span>
-          <span class="nav-tooltip">Buku</span>
-        </a>
-      </nav>
 
       <div class="nav-actions">
         <button class="action-btn" id="themeToggle" aria-label="Toggle Dark Mode">
@@ -78,14 +63,35 @@
         </button>
       </div>
     </div>
-    
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-link aktif">🏠 Beranda</a>
-      <a href="elektronik.html" class="mobile-link">💻 Elektronik</a>
-      <a href="bahan_baku.html" class="mobile-link">🥬 Bahan Baku</a>
-      <a href="game.html" class="mobile-link">🎮 Game</a>
-      <a href="diy_give.html" class="mobile-link">🎁 DIY Give</a>
-      <a href="buku.html" class="mobile-link">📖 Buku</a>
+
+  <!-- ═══ CATEGORY NAVBAR (di bawah navbar utama) ═══ -->
+  <nav class="category-navbar" id="categoryNavbar">
+    <div class="category-nav-inner">
+      <a href="index.html" class="cat-link aktif">
+        <span class="cat-icon">🏠</span>
+        <span>Beranda</span>
+      </a>
+      <div class="cat-divider"></div>
+      <a href="elektronik.html" class="cat-link">
+        <span class="cat-icon">💻</span>
+        <span>Elektronik</span>
+      </a>
+      <a href="bahan_baku.html" class="cat-link">
+        <span class="cat-icon">🥬</span>
+        <span>Bahan Baku</span>
+      </a>
+      <a href="game.html" class="cat-link">
+        <span class="cat-icon">🎮</span>
+        <span>Game</span>
+      </a>
+      <a href="diy_give.html" class="cat-link">
+        <span class="cat-icon">🎁</span>
+        <span>DIY Give</span>
+      </a>
+      <a href="buku.html" class="cat-link">
+        <span class="cat-icon">📖</span>
+        <span>Buku</span>
+      </a>
     </div>
   </nav>
 
@@ -151,15 +157,15 @@
     </div>
   </section>
 
-  <!-- ===== PROMO BANNER (diisi JS) ===== -->
+  <!-- Promo Banner -->
   <section class="banner-section">
     <div id="promoBanner"></div>
   </section>
 
-  <!-- ===== FEATURED PRODUCTS (diisi JS) ===== -->
+  <!-- Featured Products -->
   <section class="featured-section" id="featuredSection"></section>
 
-  <!-- ===== DISKON SECTION (diisi JS) ===== -->
+  <!-- Diskon Section -->
   <section class="diskon-section" id="diskonSection"></section>
 
   <!-- Categories Section -->
@@ -219,7 +225,7 @@
           <div class="kategori-badge">20+ Items</div>
         </a>
 
-        <a href="buku.html" class="kartu-kategori" data-category="diy">
+        <a href="buku.html" class="kartu-kategori" data-category="buku">
           <div class="kategori-image">
             <span class="kategori-icon">📖</span>
           </div>
@@ -230,7 +236,6 @@
           </div>
           <div class="kategori-badge">20+ Items</div>
         </a>
-
       </div>
     </div>
   </section>
@@ -322,7 +327,7 @@
         <div class="cart-total">
           <div>
             <span>Total Dipilih</span>
-            <span id="cartSelectedCount" style="font-size:13px; color: var(--color-text-muted);"></span>
+            <span id="cartSelectedCount" style="font-size:13px; color: var(--text-muted);"></span>
           </div>
           <span id="cartTotalPrice">Rp 0</span>
         </div>

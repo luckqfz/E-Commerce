@@ -337,14 +337,16 @@ export const UI = {
     }
 
     // Suara saat pindah halaman / tab navigasi
-    document.querySelectorAll('.desktop-link, .mobile-link').forEach(link => {
+    document.querySelectorAll('.desktop-link, .mobile-link, .cat-link').forEach(link => {
       link.addEventListener('click', () => Sound.tabSwitch());
     });
 
-    const navbar = document.getElementById('navbar');
+    const navbar         = document.getElementById('navbar');
+    const categoryNavbar = document.getElementById('categoryNavbar');
     if (navbar) {
       window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.pageYOffset > 100);
+        if (categoryNavbar) categoryNavbar.classList.toggle('scrolled', window.pageYOffset > 10);
       });
     }
 
