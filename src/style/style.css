@@ -273,20 +273,13 @@ img { display: block; max-width: 100%; }
 }
 
 .kontainer-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1001;
-  width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
   height: 68px;
   display: flex;
   align-items: center;
   gap: 20px;
-  background: inherit;
-  backdrop-filter: inherit;
-  -webkit-backdrop-filter: inherit;
 }
 
 /* Logo */
