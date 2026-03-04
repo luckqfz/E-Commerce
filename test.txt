@@ -4,30 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Koleksi game digital terlengkap di Toko Ludonanzak">
-  <meta name="theme-color" content="#f97316">
+  <meta name="theme-color" content="#6b5444">
   
   <title>Katalog Game - Toko Ludonanzak</title>
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/jpeg" href="src/assets/images/logo.jpeg">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="src/style/style.css">
 </head>
 
 <body>
-  <!-- PAGE LOADER -->
-  <div id="pageLoader">
-    <div class="loader-logo">
-      <div class="loader-logo-icon">🎮</div>
-      <div class="loader-logo-text">Ludonanzak</div>
-    </div>
-    <div class="loader-bar-wrapper">
-      <div class="loader-bar" id="loaderBar"></div>
-    </div>
-    <div class="loader-text">Memuat koleksi game...</div>
-  </div>
   
+  <!-- Toast Notification Container -->
   <div id="toastContainer" class="toast-container"></div>
 
   <!-- ═══ NAVBAR UTAMA ═══ -->
@@ -61,16 +54,6 @@
           <span></span>
         </button>
       </div>
-    </div>
-    
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-link">🏠 Beranda</a>
-      <a href="elektronik.html" class="mobile-link">💻 Elektronik</a>
-      <a href="bahan_baku.html" class="mobile-link">🥬 Bahan Baku</a>
-      <a href="game.html" class="mobile-link aktif">🎮 Game</a>
-      <a href="diy_give.html" class="mobile-link">🎁 DIY Give</a>
-      <a href="buku.html" class="mobile-link">📖 Buku</a>
     </div>
   </nav>
 
@@ -145,14 +128,20 @@
           </select>
           
           <div class="view-toggle">
-            <button class="view-btn active" data-view="grid"><span>⊞</span></button>
-            <button class="view-btn" data-view="list"><span>☰</span></button>
+            <button class="view-btn active" data-view="grid">
+              <span>⊞</span>
+            </button>
+            <button class="view-btn" data-view="list">
+              <span>☰</span>
+            </button>
           </div>
         </div>
       </div>
 
       <!-- Products Grid -->
-      <div class="products-grid" id="productsGrid"></div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be inserted here by JavaScript -->
+      </div>
       
       <!-- Empty State -->
       <div class="empty-results" id="emptyResults" style="display: none;">
@@ -180,18 +169,21 @@
         <h3>🛍️ Toko Ludonanzak</h3>
         <p>Belanja nyaman, berkualitas, dan modern</p>
       </div>
+      
       <div class="footer-info">
         <div class="footer-section">
           <h4>Kontak</h4>
           <p>📍 Jl. AkKangenKm No.1, Yogyakarta</p>
           <p>📱 0856-9531-8450</p>
         </div>
+        
         <div class="footer-section">
           <h4>Jam Operasional</h4>
           <p>Senin - Minggu: 24/7</p>
         </div>
       </div>
     </div>
+    
     <div class="footer-bottom">
       <p>&copy; 2026 Toko Ludonanzak.</p>
     </div>
@@ -202,7 +194,9 @@
     <div class="modal-overlay" id="quickViewOverlay"></div>
     <div class="modal-content modal-large">
       <button class="modal-close" id="closeQuickView">×</button>
-      <div class="quick-view-content" id="quickViewContent"></div>
+      <div class="quick-view-content" id="quickViewContent">
+        <!-- Quick view content will be inserted here -->
+      </div>
     </div>
   </div>
 
@@ -249,6 +243,7 @@
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script type="module" src="src/js/script.js"></script>
 </body>
 </html>

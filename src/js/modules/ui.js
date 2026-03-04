@@ -142,7 +142,7 @@ export const UI = {
 
           <button class="quick-view-btn"
                   onclick='UI.tampilkanQuickView(${JSON.stringify(produk).replace(/'/g, "&#39;")})'>
-            👁️ Quick View
+            Quick View
           </button>
         </div>
 
@@ -153,11 +153,10 @@ export const UI = {
             <button class="btn btn-primary"
                     onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "&#39;")}, event); event.stopPropagation();'>
               <span>🛒</span>
-              <span>Tambah</span>
             </button>
             <button class="btn btn-checkout"
                     onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "&#39;")}); event.stopPropagation();'>
-              <span>Beli Langsung</span>
+              <span>Beli</span>
             </button>
           </div>
         </div>
@@ -192,11 +191,11 @@ export const UI = {
           <div class="qv-actions">
             <button class="btn btn-secondary"
                     onclick='Cart.tambah(${JSON.stringify(produk).replace(/'/g, "&#39;")}, event)'>
-              🛒 Tambah ke Keranjang
+              Tambah ke Keranjang
             </button>
             <button class="btn btn-primary"
                     onclick='Cart.checkoutLangsung(${JSON.stringify(produk).replace(/'/g, "&#39;")})'>
-              ⚡ Beli Langsung
+              Beli Langsung
             </button>
             <button class="btn btn-secondary"
                     onclick='Wishlist.toggle(${JSON.stringify(produk).replace(/'/g, "&#39;")});

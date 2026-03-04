@@ -1006,7 +1006,6 @@ img { display: block; max-width: 100%; }
   margin-bottom: 6px;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1414,7 +1413,6 @@ img { display: block; max-width: 100%; }
   margin-bottom: 8px;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1885,6 +1883,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 600px) {
   .qv-grid { grid-template-columns: 1fr; }
+  .qv-image-wrapper { aspect-ratio: 3 / 2; max-height: 260px; }
 }
 
 .qv-image-wrapper {
@@ -1892,12 +1891,16 @@ img { display: block; max-width: 100%; }
   border-radius: var(--r-xl);
   overflow: hidden;
   background: var(--bg-muted);
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
+  width: 100%;
 }
 
 .qv-image {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: transform 0.4s;
 }
 .qv-image-wrapper:hover .qv-image { transform: scale(1.04); }
