@@ -114,7 +114,7 @@ function initScrollToTop() {
 
 // ── Hash Scroll (setelah navigasi dari search) ────────────────
 function initHashScroll() {
-  const hash = window.location.hash; // contoh: #produk-game001
+  const hash = window.location.hash;
   if (!hash.startsWith('#produk-')) return;
 
   const idProduk = hash.replace('#produk-', '');
@@ -139,6 +139,17 @@ function initHashScroll() {
   coba();
 }
 
+// ── Ambil nama halaman dengan aman (handle trailing slash) ────
+function getNamaFile() {
+  const raw = window.location.pathname
+    .split('/')
+    .pop()                    // ambil segmen terakhir
+    .replace('.html', '')     // hapus ekstensi
+    .trim();
+  // Jika kosong (root URL "/") → anggap index
+  return raw === '' ? 'index' : raw;
+}
+
 // ── Main App ──────────────────────────────────────────────────
 function mulaiAplikasi() {
   const loaderCtx = jalankanLoader();
@@ -151,13 +162,15 @@ function mulaiAplikasi() {
   // Inisialisasi search preview (semua halaman)
   SearchPreview.init(Cart);
 
-  const namaFile = window.location.pathname.split('/').pop().replace('.html', '');
+  const namaFile = getNamaFile();
 
-  if (PRODUCTS[namaFile]) {
+  // Halaman kategori produk
+  if (namaFile !== 'index' && PRODUCTS[namaFile]) {
     Filter.init(namaFile, Cart, Wishlist);
   }
 
-  if (namaFile === 'index' || namaFile === '') {
+  // Halaman utama
+  if (namaFile === 'index') {
     UI.renderHomepageSections();
   }
 

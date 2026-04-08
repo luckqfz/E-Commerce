@@ -30,18 +30,22 @@ const SEMUA_PRODUK = (() => {
   return hasil;
 })();
 
-// Maksimal hasil yang ditampilkan sekaligus
 const MAX_HASIL = 7;
 
 export const SearchPreview = {
-  _cart:        null,
-  _dropdown:    null,
-  _input:       null,
-  _focusIndex:  -1,
-  _hasilSaat:   [],
+  _cart:               null,
+  _dropdown:           null,
+  _input:              null,
+  _focusIndex:         -1,
+  _hasilSaat:          [],
+  // Simpan referensi handler agar bisa di-cleanup
+  _outsideClickHandler: null,
 
   /** Inisialisasi — panggil sekali saat app dimuat */
   init(Cart) {
+    // Bersihkan listener lama jika init dipanggil ulang
+    this.destroy();
+
     this._cart  = Cart;
     this._input = document.getElementById('searchInput');
     if (!this._input) return;
@@ -50,8 +54,20 @@ export const SearchPreview = {
     this._pasangEvent();
   },
 
+  /** Hapus semua event listener (mencegah memory leak) */
+  destroy() {
+    if (this._outsideClickHandler) {
+      document.removeEventListener('click', this._outsideClickHandler);
+      this._outsideClickHandler = null;
+    }
+  },
+
   // ── Buat elemen dropdown sekali ────────────────────────────
   _buatDropdown() {
+    // Hapus dropdown lama jika ada
+    const lama = document.getElementById('searchPreview');
+    if (lama) lama.remove();
+
     const wrapper = this._input.closest('.search-wrapper');
     if (!wrapper) return;
 
@@ -67,7 +83,7 @@ export const SearchPreview = {
 
   // ── Pasang event listeners ──────────────────────────────────
   _pasangEvent() {
-    const input    = this._input;
+    const input         = this._input;
     const cariDebounced = utils.debounce(q => this._cari(q), 220);
 
     input.addEventListener('input', e => {
@@ -82,12 +98,13 @@ export const SearchPreview = {
     // Keyboard navigation
     input.addEventListener('keydown', e => this._handleKeydown(e));
 
-    // Tutup saat klik di luar
-    document.addEventListener('click', e => {
+    // Tutup saat klik di luar — simpan referensi untuk cleanup
+    this._outsideClickHandler = e => {
       if (!this._dropdown?.contains(e.target) && e.target !== input) {
         this._sembunyikan();
       }
-    });
+    };
+    document.addEventListener('click', this._outsideClickHandler);
 
     // Buka kembali jika input sudah ada isi & di-focus
     input.addEventListener('focus', () => {
@@ -106,7 +123,7 @@ export const SearchPreview = {
       (p._kategori || '').toLowerCase().includes(q)
     ).slice(0, MAX_HASIL);
 
-    this._hasilSaat = cocok;
+    this._hasilSaat  = cocok;
     this._focusIndex = -1;
     this._render(cocok, query);
   },
@@ -156,7 +173,6 @@ export const SearchPreview = {
       // Pasang event click pada setiap item
       dd.querySelectorAll('.search-result-item').forEach((el, i) => {
         el.addEventListener('click', e => {
-          // Jangan trigger jika yang diklik tombol aksi
           if (e.target.closest('.search-action-btn')) return;
           this._pilihItem(hasil[i]);
         });
@@ -297,16 +313,14 @@ export const SearchPreview = {
     this._sembunyikan();
     if (this._input) this._input.value = '';
 
-    const halamanTujuan = this._kategoriKeHalaman(produk._kategori);
-    const namaFileSaat  = window.location.pathname.split('/').pop().replace('.html', '');
+    const halamanTujuan  = this._kategoriKeHalaman(produk._kategori);
+    const namaFileSaat   = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
     const sudahDiHalaman = halamanTujuan === namaFileSaat ||
-                           (namaFileSaat === '' && halamanTujuan === 'index');
+                           (namaFileSaat === 'index' && halamanTujuan === 'index');
 
     if (sudahDiHalaman) {
-      // ── Sudah di halaman yang benar → scroll & highlight ──
       this._scrollKeProduK(produk.id);
     } else {
-      // ── Beda halaman → navigasi dulu, bawa ID via hash ──
       const url = `${halamanTujuan}.html#produk-${produk.id}`;
       window.location.href = url;
     }
@@ -314,27 +328,20 @@ export const SearchPreview = {
 
   // ── Scroll ke kartu produk & beri efek highlight ────────────
   _scrollKeProduK(idProduk) {
-    // Coba cari kartu berdasarkan data-id atau konten
-    // Kartu dirender oleh UI.renderProduk — tidak ada data-id bawaan,
-    // jadi kita pakai onclick attribute yang mengandung id produk
     let kartu = document.querySelector(`[data-product-id="${idProduk}"]`)
                   ?.closest('.product-card');
 
     if (!kartu) {
-      // Fallback: cari tombol wishlist yang punya data-product-id
       const wishBtn = document.querySelector(`.wishlist-btn[data-product-id="${idProduk}"]`);
       if (wishBtn) kartu = wishBtn.closest('.product-card');
     }
 
     if (!kartu) {
-      // Produk tidak tampil (mungkin terfilter) — reset filter dulu
       if (window.Filter) {
-        // Reset search & filter
         if (this._input) {
           this._input.value = '';
           this._input.dispatchEvent(new Event('input', { bubbles: true }));
         }
-        // Tunggu render ulang lalu cari lagi
         setTimeout(() => this._scrollKeProduK(idProduk), 400);
         return;
       }
@@ -342,18 +349,13 @@ export const SearchPreview = {
 
     if (kartu) {
       kartu.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Flash highlight animation
       kartu.classList.add('product-highlight');
       setTimeout(() => kartu.classList.remove('product-highlight'), 2000);
     }
   },
 
-  // ── Tampilkan dropdown ───────────────────────────────────────
-  _tampilkan() {
-    this._dropdown?.classList.add('visible');
-  },
+  _tampilkan() { this._dropdown?.classList.add('visible'); },
 
-  // ── Sembunyikan dropdown ─────────────────────────────────────
   _sembunyikan() {
     this._dropdown?.classList.remove('visible');
     this._input?.classList.remove('has-results');

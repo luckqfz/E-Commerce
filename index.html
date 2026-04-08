@@ -31,180 +31,245 @@
 
   <div id="toastContainer" class="toast-container"></div>
 
-  <!-- ═══ NAVBAR UTAMA ═══ -->
+  <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="kontainer-nav">
       <a href="index.html" class="logo-toko">
         <img src="src/assets/images/logo.jpeg" alt="Ludonanzak" class="logo-img">
         <span>Ludonanzak</span>
       </a>
-      
       <div class="search-wrapper">
         <input type="text" class="search-input" placeholder="Cari produk..." id="searchInput">
         <span class="search-icon">🔍</span>
       </div>
-
       <div class="nav-actions">
         <button class="action-btn" id="themeToggle" aria-label="Toggle Dark Mode">
-          <span class="theme-icon">🌙</span>
+          <span class="theme-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
         </button>
         <button class="action-btn" id="wishlistBtn" aria-label="Wishlist">
-          <span class="icon">❤️</span>
+          <span class="icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </span>
           <span class="badge" id="wishlistBadge">0</span>
         </button>
         <button class="action-btn" id="cartBtn" aria-label="Keranjang">
-          <span class="icon">🛒</span>
+          <span class="icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </span>
           <span class="badge" id="cartBadge">0</span>
         </button>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ═══ CATEGORY NAVBAR (di bawah navbar utama) ═══ -->
+  <!-- CATEGORY NAVBAR -->
   <nav class="category-navbar" id="categoryNavbar">
     <div class="category-nav-inner">
-      <a href="index.html" class="cat-link aktif">
-        <span class="cat-icon">🏠</span>
-        <span>Beranda</span>
-      </a>
+      <a href="index.html" class="cat-link aktif"><span class="cat-icon">🏠</span><span>Beranda</span></a>
       <div class="cat-divider"></div>
-      <a href="elektronik.html" class="cat-link">
-        <span class="cat-icon">💻</span>
-        <span>Elektronik</span>
-      </a>
-      <a href="bahan_baku.html" class="cat-link">
-        <span class="cat-icon">🥬</span>
-        <span>Bahan Baku</span>
-      </a>
-      <a href="game.html" class="cat-link">
-        <span class="cat-icon">🎮</span>
-        <span>Game</span>
-      </a>
-      <a href="diy_give.html" class="cat-link">
-        <span class="cat-icon">🎁</span>
-        <span>DIY Give</span>
-      </a>
-      <a href="buku.html" class="cat-link">
-        <span class="cat-icon">📖</span>
-        <span>Buku</span>
-      </a>
+      <a href="elektronik.html" class="cat-link"><span class="cat-icon">💻</span><span>Elektronik</span></a>
+      <a href="bahan_baku.html" class="cat-link"><span class="cat-icon">🥬</span><span>Bahan Baku</span></a>
+      <a href="game.html" class="cat-link"><span class="cat-icon">🎮</span><span>Game</span></a>
+      <a href="diy_give.html" class="cat-link"><span class="cat-icon">🎁</span><span>DIY Give</span></a>
+      <a href="buku.html" class="cat-link"><span class="cat-icon">📖</span><span>Buku</span></a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ═══ HERO — Editorial Split Layout ═══ -->
   <header class="hero">
-    <div class="hero-background">
-      <div class="hero-pattern"></div>
-    </div>
+    <div class="hero-background"><div class="hero-pattern"></div></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <!-- LEFT: Text Content -->
     <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-live-dot"></span>
+        <span>Toko Online &middot; Yogyakarta</span>
+      </div>
       <h1 class="hero-title">
-        Selamat Datang di
-        <span class="gradient-text">Toko Ludonanzak</span>
+        Satu Tempat<br>untuk <span class="gradient-text">Semua</span><br>Kebutuhan Anda
       </h1>
-      <p class="hero-subtitle">
-        Pengalaman belanja modern dengan koleksi terlengkap untuk kebutuhan Anda
-      </p>
+      <p class="hero-subtitle">Dari gadget, game digital, bahan masak, hingga hadiah personal — belanja cepat &amp; checkout via WhatsApp.</p>
+      <div class="hero-cta-row">
+        <a href="elektronik.html" class="btn-hero-primary">Mulai Belanja</a>
+        <a href="#kategori-section" class="btn-hero-ghost">Lihat Kategori</a>
+      </div>
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number">100+</div>
           <div class="stat-label">Produk</div>
         </div>
+        <div class="stat-divider"></div>
         <div class="stat-item">
           <div class="stat-number">5</div>
           <div class="stat-label">Kategori</div>
         </div>
+        <div class="stat-divider"></div>
         <div class="stat-item">
           <div class="stat-number">24/7</div>
           <div class="stat-label">Pelayanan</div>
         </div>
       </div>
     </div>
+
+    <!-- RIGHT: Visual Panel with floating product cards -->
+    <div class="hero-visual">
+      <div class="hero-visual-bg"></div>
+      <div class="hero-float-cards">
+        <!-- Card 1 -->
+        <div class="hero-pcard">
+          <img class="hero-pcard-img"
+               src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=120&auto=format&fit=crop&q=80"
+               alt="Produk">
+          <div class="hero-pcard-info">
+            <div class="hero-pcard-name">DualSense Controller</div>
+            <div class="hero-pcard-price">Rp 950.000</div>
+            <div class="hero-pcard-rating">
+              <span class="hero-pcard-star">★★★★★</span>
+              <span class="hero-pcard-rnum">4.9</span>
+            </div>
+          </div>
+          <span class="hero-pcard-badge">Populer</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="hero-pcard">
+          <img class="hero-pcard-img"
+               src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=120&auto=format&fit=crop&q=80"
+               alt="Produk">
+          <div class="hero-pcard-info">
+            <div class="hero-pcard-name">Game Digital PS5</div>
+            <div class="hero-pcard-price">Rp 450.000</div>
+            <div class="hero-pcard-rating">
+              <span class="hero-pcard-star">★★★★★</span>
+              <span class="hero-pcard-rnum">4.8</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="hero-pcard">
+          <img class="hero-pcard-img"
+               src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=120&auto=format&fit=crop&q=80"
+               alt="Produk">
+          <div class="hero-pcard-info">
+            <div class="hero-pcard-name">Koleksi Buku Pilihan</div>
+            <div class="hero-pcard-price">Rp 89.000</div>
+            <div class="hero-pcard-rating">
+              <span class="hero-pcard-star">★★★★</span>
+              <span class="hero-pcard-rnum">4.6</span>
+            </div>
+          </div>
+          <span class="hero-pcard-badge" style="background:#f97316">Diskon</span>
+        </div>
+      </div>
+    </div>
+
     <div class="scroll-indicator">
-      <span>Scroll untuk eksplorasi</span>
       <div class="scroll-arrow">↓</div>
+      <span>Scroll</span>
     </div>
   </header>
 
-  <!-- Welcome Section -->
-  <section class="welcome-section">
-    <div class="kontainer">
-      <div class="section-header">
-        <span class="section-tag">Tentang Kami</span>
-        <h2 class="section-title">Belanja dengan Pengalaman Berbeda</h2>
+  <!-- ═══ PHOTO BANNER ═══ -->
+  <section class="pb-section">
+    <div class="pb-top">
+      <div class="pb-hero-cell">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&auto=format&fit=crop&q=80" alt="Shopping" class="pb-img">
+        <div class="pb-hero-meta">
+          <span class="pb-label">Koleksi Terlengkap</span>
+          <span class="pb-live"><span class="pb-live-dot"></span>Tersedia Sekarang</span>
+        </div>
       </div>
-      
-      <div class="welcome-grid">
-        <div class="welcome-card">
-          <div class="welcome-icon">⚡</div>
-          <h3>Cepat & Mudah</h3>
-          <p>Proses pemesanan yang simpel dan checkout langsung via WhatsApp</p>
+      <div class="pb-text-panel">
+        <p class="pb-eyebrow">Toko Ludonanzak</p>
+        <h2 class="pb-heading">Satu Tempat,<br>Semua Kebutuhan.</h2>
+        <p class="pb-body">Dari gadget hingga game digital, bahan baku hingga hadiah personal — semua tersedia dengan harga kompetitif dan checkout cepat via WhatsApp.</p>
+        <div class="pb-stats">
+          <div class="pb-stat"><span class="pb-stat-num">100+</span><span class="pb-stat-label">Produk</span></div>
+          <div class="pb-stat-divider"></div>
+          <div class="pb-stat"><span class="pb-stat-num">5</span><span class="pb-stat-label">Kategori</span></div>
+          <div class="pb-stat-divider"></div>
+          <div class="pb-stat"><span class="pb-stat-num">24/7</span><span class="pb-stat-label">Pelayanan</span></div>
         </div>
-        <div class="welcome-card">
-          <div class="welcome-icon">💎</div>
-          <h3>Kualitas Terjamin</h3>
-          <p>Semua produk dipilih dengan standar kualitas terbaik</p>
-        </div>
-        <div class="welcome-card">
-          <div class="welcome-icon">🎯</div>
-          <h3>Harga Kompetitif</h3>
-          <p>Dapatkan produk berkualitas dengan harga yang bersahabat</p>
-        </div>
+      </div>
+    </div>
+    <div class="pb-bottom">
+      <a href="elektronik.html" class="pb-cat-cell">
+        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&auto=format&fit=crop&q=80" alt="Elektronik" class="pb-img">
+        <div class="pb-cat-info"><span class="pb-cat-name">Elektronik</span><span class="pb-cat-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+      <a href="game.html" class="pb-cat-cell">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80" alt="Game" class="pb-img">
+        <div class="pb-cat-info"><span class="pb-cat-name">Game Digital</span><span class="pb-cat-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+      <a href="diy_give.html" class="pb-cat-cell">
+        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&auto=format&fit=crop&q=80" alt="DIY Give" class="pb-img">
+        <div class="pb-cat-info"><span class="pb-cat-name">DIY Give</span><span class="pb-cat-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+    </div>
+    <div class="pb-ticker" aria-hidden="true">
+      <div class="pb-ticker-track">
+        <span>Checkout via WhatsApp</span><span class="pb-tick-sep">—</span>
+        <span>Kualitas Terjamin</span><span class="pb-tick-sep">—</span>
+        <span>Harga Kompetitif</span><span class="pb-tick-sep">—</span>
+        <span>Proses Cepat</span><span class="pb-tick-sep">—</span>
+        <span>Stok Selalu Update</span><span class="pb-tick-sep">—</span>
+        <span>Belanja Mudah</span><span class="pb-tick-sep">—</span>
+        <span>Checkout via WhatsApp</span><span class="pb-tick-sep">—</span>
+        <span>Kualitas Terjamin</span><span class="pb-tick-sep">—</span>
+        <span>Harga Kompetitif</span><span class="pb-tick-sep">—</span>
+        <span>Proses Cepat</span><span class="pb-tick-sep">—</span>
+        <span>Stok Selalu Update</span><span class="pb-tick-sep">—</span>
+        <span>Belanja Mudah</span><span class="pb-tick-sep">—</span>
       </div>
     </div>
   </section>
 
-  <!-- Promo Banner -->
-  <section class="banner-section">
-    <div id="promoBanner"></div>
-  </section>
-
-  <!-- Featured Products -->
+  <!-- ═══ FEATURED PRODUCTS ═══ -->
   <section class="featured-section" id="featuredSection"></section>
 
-  <!-- Diskon Section -->
+  <!-- ═══ DISKON SECTION ═══ -->
   <section class="diskon-section" id="diskonSection"></section>
 
-  <!-- Categories Section -->
-  <section class="categories-section">
+  <!-- ═══ CATEGORIES ═══ -->
+  <section class="categories-section" id="kategori-section">
     <div class="kontainer">
-      <div class="section-header">
+      <div class="section-header anim-fade-up">
         <span class="section-tag">Koleksi Kami</span>
         <h2 class="section-title">Jelajahi Kategori Produk</h2>
       </div>
-      
       <div class="grid-kategori">
-        <a href="elektronik.html" class="kartu-kategori" data-category="elektronik">
+        <a href="elektronik.html" class="kartu-kategori anim-fade-up" style="--delay:0.05s">
           <div class="kategori-image">
-            <span class="kategori-icon">💻</span>
+            <svg class="kategori-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <div class="kategori-content">
             <h3 class="kategori-title">Elektronik</h3>
-            <p class="kategori-desc">Gadget & perangkat teknologi terkini</p>
+            <p class="kategori-desc">Gadget &amp; perangkat teknologi terkini</p>
             <span class="kategori-arrow">→</span>
           </div>
           <div class="kategori-badge">20+ Items</div>
         </a>
-        
-        <a href="bahan_baku.html" class="kartu-kategori" data-category="bahan-baku">
+        <a href="bahan_baku.html" class="kartu-kategori anim-fade-up" style="--delay:0.1s">
           <div class="kategori-image">
-            <span class="kategori-icon">🥬</span>
+            <svg class="kategori-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <div class="kategori-content">
             <h3 class="kategori-title">Bahan Baku</h3>
-            <p class="kategori-desc">Bahan masak berkualitas & segar</p>
+            <p class="kategori-desc">Bahan masak berkualitas &amp; segar</p>
             <span class="kategori-arrow">→</span>
           </div>
           <div class="kategori-badge">20+ Items</div>
         </a>
-        
-        <a href="game.html" class="kartu-kategori" data-category="game">
+        <a href="game.html" class="kartu-kategori anim-fade-up" style="--delay:0.15s">
           <div class="kategori-image">
-            <span class="kategori-icon">🎮</span>
+            <svg class="kategori-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="12" y1="12" x2="12" y2="12"/><polyline points="8 10 8 14"/><polyline points="10 12 6 12"/><circle cx="16" cy="11" r="1"/><circle cx="18" cy="13" r="1"/></svg>
           </div>
           <div class="kategori-content">
             <h3 class="kategori-title">Game Digital</h3>
@@ -213,26 +278,24 @@
           </div>
           <div class="kategori-badge">20+ Items</div>
         </a>
-        
-        <a href="diy_give.html" class="kartu-kategori" data-category="diy">
+        <a href="diy_give.html" class="kartu-kategori anim-fade-up" style="--delay:0.2s">
           <div class="kategori-image">
-            <span class="kategori-icon">🎁</span>
+            <svg class="kategori-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
           </div>
           <div class="kategori-content">
             <h3 class="kategori-title">DIY Give</h3>
-            <p class="kategori-desc">Hadiah unik & personalized</p>
+            <p class="kategori-desc">Hadiah unik &amp; personalized</p>
             <span class="kategori-arrow">→</span>
           </div>
           <div class="kategori-badge">20+ Items</div>
         </a>
-
-        <a href="buku.html" class="kartu-kategori" data-category="buku">
+        <a href="buku.html" class="kartu-kategori anim-fade-up" style="--delay:0.25s">
           <div class="kategori-image">
-            <span class="kategori-icon">📖</span>
+            <svg class="kategori-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           </div>
           <div class="kategori-content">
             <h3 class="kategori-title">Buku</h3>
-            <p class="kategori-desc">Perpustakaan mini</p>
+            <p class="kategori-desc">Perpustakaan mini pilihan</p>
             <span class="kategori-arrow">→</span>
           </div>
           <div class="kategori-badge">20+ Items</div>
@@ -241,50 +304,344 @@
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features-section">
+  <!-- ═══ VALUE PROPS ═══ -->
+  <section class="value-section">
     <div class="kontainer">
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">📦</div>
-          <h4>Stok Terjaga</h4>
-          <p>Update real-time ketersediaan produk</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">💳</div>
-          <h4>Pembayaran Mudah</h4>
-          <p>Konfirmasi cepat via WhatsApp</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🚀</div>
+      <div class="value-grid">
+        <div class="value-card anim-fade-up" style="--delay:0s">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
           <h4>Proses Cepat</h4>
-          <p>Checkout dalam hitungan detik</p>
+          <p>Checkout dalam hitungan detik via WhatsApp</p>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎨</div>
-          <h4>Personalisasi</h4>
-          <p>Sesuaikan dengan kebutuhan Anda</p>
+        <div class="value-card anim-fade-up" style="--delay:0.08s">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Kualitas Terjamin</h4>
+          <p>Semua produk dipilih dengan standar terbaik</p>
+        </div>
+        <div class="value-card anim-fade-up" style="--delay:0.16s">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Buka 24/7</h4>
+          <p>Belanja kapan saja, kami selalu siap melayani</p>
+        </div>
+        <div class="value-card anim-fade-up" style="--delay:0.24s">
+          <div class="value-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4>Harga Kompetitif</h4>
+          <p>Produk berkualitas dengan harga bersahabat</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ═══ KOMENTAR SECTION ═══ -->
+  <section class="komentar-section" id="komentar-section">
+    <div class="kontainer">
+      <div class="section-header anim-fade-up">
+        <span class="section-tag">Kata Mereka</span>
+        <h2 class="section-title">Komentar Teman Kelas</h2>
+      </div>
+
+      <!-- Form -->
+      <div class="komentar-form-wrap anim-fade-up">
+        <div class="komentar-form-inner">
+          <div class="komentar-form-title">✏️ Tulis Komentarmu</div>
+          <div class="komentar-fields">
+            <input type="text" id="komentarNama" placeholder="Nama kamu" maxlength="50" class="komentar-input"/>
+            <textarea id="komentarIsi" placeholder="Tulis kesan atau saran kamu..." class="komentar-textarea"></textarea>
+          </div>
+          <button class="komentar-btn" id="komentarKirim" onclick="kirimKomentar()">Kirim Komentar →</button>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div class="komentar-list-wrap">
+        <div class="komentar-list-header">
+          <span class="komentar-list-title">Semua Komentar</span>
+          <span class="komentar-count" id="komentarCount">memuat...</span>
+        </div>
+        <div id="komentarList"><div class="komentar-loading"><div class="komentar-spinner"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ═══ KOMENTAR SECTION ═══ */
+    .komentar-section {
+      padding: 80px 0;
+      background: var(--bg-secondary, #fafafa);
+    }
+    .dark-mode .komentar-section { background: var(--bg-secondary, #111); }
+
+    .komentar-form-wrap {
+      margin-bottom: 48px;
+    }
+    .komentar-form-inner {
+      background: var(--card-bg, #fff);
+      border: 1px solid var(--border, #eee);
+      border-radius: 20px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+      max-width: 680px;
+    }
+    .dark-mode .komentar-form-inner {
+      background: var(--card-bg, #1a1a1a);
+      border-color: var(--border, #2a2a2a);
+    }
+    .komentar-form-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 20px;
+      color: var(--text-primary, #111);
+    }
+    .dark-mode .komentar-form-title { color: var(--text-primary, #f0f0f0); }
+    .komentar-fields { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+    .komentar-input, .komentar-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border, #e5e5e5);
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      background: var(--bg, #fafafa);
+      color: var(--text-primary, #111);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .dark-mode .komentar-input, .dark-mode .komentar-textarea {
+      background: var(--bg, #0d0d0d);
+      color: var(--text-primary, #f0f0f0);
+      border-color: var(--border, #333);
+    }
+    .komentar-input:focus, .komentar-textarea:focus {
+      border-color: #f97316;
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+    }
+    .komentar-textarea { resize: vertical; min-height: 100px; }
+    .komentar-btn {
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .komentar-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .komentar-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .komentar-list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .komentar-list-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-primary, #111);
+    }
+    .dark-mode .komentar-list-title { color: var(--text-primary, #f0f0f0); }
+    .komentar-count {
+      font-size: 13px;
+      color: var(--text-muted, #888);
+      background: var(--card-bg, #f0f0f0);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .dark-mode .komentar-count { background: var(--card-bg, #222); }
+
+    .komentar-grid { display: flex; flex-direction: column; gap: 14px; }
+    .komentar-card {
+      background: var(--card-bg, #fff);
+      border: 1px solid var(--border, #eee);
+      border-radius: 16px;
+      padding: 18px 22px;
+      transition: border-color 0.2s;
+      animation: fadeUp 0.4s ease both;
+    }
+    .dark-mode .komentar-card {
+      background: var(--card-bg, #1a1a1a);
+      border-color: var(--border, #2a2a2a);
+    }
+    .komentar-card:hover { border-color: #f97316; }
+    .komentar-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .komentar-avatar {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .komentar-nama {
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-primary, #111);
+    }
+    .dark-mode .komentar-nama { color: var(--text-primary, #f0f0f0); }
+    .komentar-waktu { font-size: 11px; color: var(--text-muted, #999); }
+    .komentar-teks {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary, #444);
+      padding-left: 44px;
+    }
+    .dark-mode .komentar-teks { color: var(--text-secondary, #aaa); }
+
+    .komentar-loading { display: flex; justify-content: center; padding: 40px; }
+    .komentar-spinner {
+      width: 26px; height: 26px;
+      border: 2px solid var(--border, #eee);
+      border-top-color: #f97316;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    .komentar-empty {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-muted, #999);
+      font-size: 14px;
+    }
+    .komentar-empty-icon { font-size: 40px; display: block; margin-bottom: 12px; opacity: 0.5; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+
+  <script>
+    const SB_URL = 'https://jmmptvnvqyihghicjfha.supabase.co';
+    const SB_KEY = 'sb_publishable_ttOEBOB5mbWgUWBBjM9dxg_yJER3R0V';
+    const SB_HEADERS = {
+      'Content-Type': 'application/json',
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer ' + SB_KEY
+    };
+
+    const AVATAR_COLORS = [
+      ['#fde68a','#78350f'],['#bbf7d0','#14532d'],['#bfdbfe','#1e3a8a'],
+      ['#fecaca','#7f1d1d'],['#e9d5ff','#4c1d95'],['#fed7aa','#7c2d12']
+    ];
+
+    function sbAvatarColor(nama) {
+      let h = 0; for (let c of nama) h += c.charCodeAt(0);
+      return AVATAR_COLORS[h % AVATAR_COLORS.length];
+    }
+
+    function sbTimeAgo(str) {
+      const diff = Math.floor((new Date() - new Date(str)) / 1000);
+      if (diff < 60) return 'Baru saja';
+      if (diff < 3600) return Math.floor(diff/60) + ' menit lalu';
+      if (diff < 86400) return Math.floor(diff/3600) + ' jam lalu';
+      return Math.floor(diff/86400) + ' hari lalu';
+    }
+
+    function sbEsc(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    async function muatKomentar() {
+      try {
+        const res = await fetch(SB_URL + '/rest/v1/review?select=*&order=created_at.desc', { headers: SB_HEADERS });
+        const data = await res.json();
+        const list = document.getElementById('komentarList');
+        const count = document.getElementById('komentarCount');
+
+        if (!Array.isArray(data) || data.length === 0) {
+          count.textContent = '0 komentar';
+          list.innerHTML = '<div class="komentar-empty"><span class="komentar-empty-icon">💬</span>Belum ada komentar. Jadilah yang pertama!</div>';
+          return;
+        }
+
+        count.textContent = data.length + ' komentar';
+        list.innerHTML = '<div class="komentar-grid">' + data.map((k, i) => {
+          const inisial = k.nama ? k.nama.charAt(0).toUpperCase() : '?';
+          const [bg, fg] = sbAvatarColor(k.nama || '');
+          return '<div class="komentar-card" style="animation-delay:' + (i * 0.05) + 's">' +
+            '<div class="komentar-meta">' +
+              '<div class="komentar-avatar" style="background:' + bg + ';color:' + fg + '">' + inisial + '</div>' +
+              '<div><div class="komentar-nama">' + sbEsc(k.nama) + '</div>' +
+              '<div class="komentar-waktu">' + sbTimeAgo(k.created_at) + '</div></div>' +
+            '</div>' +
+            '<div class="komentar-teks">' + sbEsc(k.komentar) + '</div>' +
+          '</div>';
+        }).join('') + '</div>';
+      } catch(e) {
+        document.getElementById('komentarList').innerHTML = '<div class="komentar-empty">Gagal memuat komentar.</div>';
+      }
+    }
+
+    async function kirimKomentar() {
+      const nama = document.getElementById('komentarNama').value.trim();
+      const komentar = document.getElementById('komentarIsi').value.trim();
+      const btn = document.getElementById('komentarKirim');
+
+      if (!nama) { alert('Nama tidak boleh kosong!'); return; }
+      if (!komentar || komentar.length < 3) { alert('Komentar terlalu pendek!'); return; }
+
+      btn.disabled = true;
+      btn.textContent = 'Mengirim...';
+
+      try {
+        const res = await fetch(SB_URL + '/rest/v1/review', {
+          method: 'POST',
+          headers: { ...SB_HEADERS, 'Prefer': 'return=minimal' },
+          body: JSON.stringify({ nama, komentar })
+        });
+
+        if (res.ok || res.status === 201) {
+          document.getElementById('komentarNama').value = '';
+          document.getElementById('komentarIsi').value = '';
+          await muatKomentar();
+        } else {
+          alert('Gagal mengirim komentar, coba lagi.');
+        }
+      } catch(e) {
+        alert('Koneksi bermasalah.');
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Kirim Komentar →';
+    }
+
+    muatKomentar();
+  </script>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <h3>🛍️ Toko Ludonanzak</h3>
+        <h3>Toko Ludonanzak</h3>
         <p>Belanja nyaman, berkualitas, dan modern</p>
       </div>
       <div class="footer-info">
         <div class="footer-section">
           <h4>Kontak</h4>
-          <p>📍 Jl. AkKangenKm No.1, Yogyakarta</p>
-          <p>📱 0856-9531-8450</p>
+          <p>Jl. AkKangenKm No.1, Yogyakarta</p>
+          <p>0856-9531-8450</p>
         </div>
         <div class="footer-section">
           <h4>Jam Operasional</h4>
-          <p>Senin - Minggu: 24/7</p>
+          <p>Senin – Minggu: 24/7</p>
         </div>
       </div>
     </div>
@@ -302,10 +659,7 @@
         <button class="modal-close" id="closeWishlist">×</button>
       </div>
       <div class="modal-body" id="wishlistContent">
-        <div class="empty-state">
-          <span class="empty-icon">💔</span>
-          <p>Belum ada produk favorit</p>
-        </div>
+        <div class="empty-state"><span class="empty-icon">💔</span><p>Belum ada produk favorit</p></div>
       </div>
     </div>
   </div>
@@ -319,22 +673,14 @@
         <button class="modal-close" id="closeCart">×</button>
       </div>
       <div class="modal-body" id="cartContent">
-        <div class="empty-state">
-          <span class="empty-icon">🛍️</span>
-          <p>Keranjang masih kosong</p>
-        </div>
+        <div class="empty-state"><span class="empty-icon">🛍️</span><p>Keranjang masih kosong</p></div>
       </div>
       <div class="modal-footer" id="cartFooter" style="display: none;">
         <div class="cart-total">
-          <div>
-            <span>Total Dipilih</span>
-            <span id="cartSelectedCount" style="font-size:13px; color: var(--text-muted);"></span>
-          </div>
+          <div><span>Total Dipilih</span><span id="cartSelectedCount" style="font-size:13px; color: var(--text-muted);"></span></div>
           <span id="cartTotalPrice">Rp 0</span>
         </div>
-        <button class="btn btn-primary" id="checkoutBtn">
-          <span>✅ Checkout via WhatsApp</span>
-        </button>
+        <button class="btn btn-primary" id="checkoutBtn"><span>✅ Checkout via WhatsApp</span></button>
       </div>
     </div>
   </div>

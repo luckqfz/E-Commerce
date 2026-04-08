@@ -11,14 +11,12 @@ import { Sound }                from '../utils/sound.js';
 
 export const Cart = {
 
-  // Set berisi ID produk yang di-checklist untuk checkout
   _checkedIds: new Set(),
 
   /** Muat isi keranjang dari localStorage saat halaman dibuka */
   init() {
     const tersimpan = utils.muatDariStorage(CONFIG.storageKeys.cart);
     state.cart = tersimpan || [];
-    // Semua item default ter-centang
     this._checkedIds = new Set(state.cart.map(i => i.id));
     this.perbaruiBadge();
     this.pasangEvent();
@@ -57,10 +55,6 @@ export const Cart = {
     }, 650);
   },
 
-  /**
-   * tambah — Masukkan produk ke keranjang.
-   * Menyimpan hargaDiskon agar total selalu akurat.
-   */
   tambah(produk, event) {
     const sudahAda = state.cart.find(item => item.id === produk.id);
 
@@ -72,11 +66,11 @@ export const Cart = {
       const hargaBayar = hargaSetelahDiskon(produk);
       state.cart.push({
         ...produk,
-        hargaBayar,            // harga setelah diskon, dipakai saat hitung total
+        hargaBayar,
         quantity: 1,
         ditambahkanPada: Date.now()
       });
-      this._checkedIds.add(produk.id);  // default ter-centang
+      this._checkedIds.add(produk.id);
       Toast.success(`${produk.nama} ditambahkan ke keranjang`);
       Sound.addToCart();
     }
@@ -88,7 +82,6 @@ export const Cart = {
     this.render();
   },
 
-  /** Hapus satu item dari keranjang */
   hapus(idProduk) {
     state.cart = state.cart.filter(item => item.id !== idProduk);
     this._checkedIds.delete(idProduk);
@@ -99,7 +92,6 @@ export const Cart = {
     Sound.removeItem();
   },
 
-  /** Tambah/kurangi jumlah. Jika 0 → hapus */
   ubahJumlah(idProduk, perubahan) {
     const item = state.cart.find(item => item.id === idProduk);
     if (!item) return;
@@ -116,7 +108,6 @@ export const Cart = {
     }
   },
 
-  /** Toggle centang/batal centang satu item */
   toggleCheck(idProduk) {
     if (this._checkedIds.has(idProduk)) {
       this._checkedIds.delete(idProduk);
@@ -126,7 +117,6 @@ export const Cart = {
     this.render();
   },
 
-  /** Centang / batal centang semua sekaligus */
   toggleCheckAll(centang) {
     if (centang) {
       state.cart.forEach(item => this._checkedIds.add(item.id));
@@ -136,7 +126,6 @@ export const Cart = {
     this.render();
   },
 
-  /** Kosongkan seluruh isi keranjang */
   kosongkan() {
     state.cart = [];
     this._checkedIds.clear();
@@ -147,7 +136,6 @@ export const Cart = {
     Sound.clearCart();
   },
 
-  /** Hitung total harga item yang ter-centang saja */
   hitungTotal() {
     return state.cart
       .filter(item => this._checkedIds.has(item.id))
@@ -157,7 +145,6 @@ export const Cart = {
       }, 0);
   },
 
-  /** Hitung total semua item tanpa filter */
   hitungTotalSemua() {
     return state.cart.reduce((total, item) => {
       const harga = item.hargaBayar ?? item.harga;
@@ -178,7 +165,6 @@ export const Cart = {
     }
   },
 
-  /** Render ulang daftar produk di dalam modal keranjang */
   render() {
     const konten     = document.getElementById('cartContent');
     const footer     = document.getElementById('cartFooter');
@@ -214,7 +200,7 @@ export const Cart = {
       </div>
       <div class="cart-items-list">
         ${state.cart.map(item => {
-          const checked   = this._checkedIds.has(item.id);
+          const checked    = this._checkedIds.has(item.id);
           const hargaBayar = item.hargaBayar ?? item.harga;
           const adaDiskon  = item.diskon && item.diskon > 0;
           return `
@@ -282,8 +268,36 @@ export const Cart = {
   },
 
   /**
-   * checkout — Kirim hanya item yang ter-centang ke WhatsApp.
+   * _buatPesanWA — Format teks pesan WhatsApp dengan encoding aman.
+   * Semua karakter spesial (nama produk, simbol, dll) di-encode via
+   * encodeURIComponent sehingga tidak merusak format URL WA.
    */
+  _buatPesanWA(items, totalHarga) {
+    const enc = s => encodeURIComponent(s);
+
+    // Bangun baris teks terlebih dahulu, baru encode keseluruhan
+    const baris = [];
+    baris.push('Halo, saya ingin memesan:\n');
+
+    items.forEach((item, index) => {
+      const hargaBayar = item.hargaBayar ?? item.harga;
+      const subtotal   = hargaBayar * item.quantity;
+
+      let baris_item = `${index + 1}. ${item.nama}`;
+      if (item.diskon) baris_item += ` (Diskon ${item.diskon}%)`;
+      if (item.quantity > 1) baris_item += ` x${item.quantity}`;
+      baris_item += `\n   Rp ${utils.formatRupiah(hargaBayar)}`;
+      if (item.quantity > 1) baris_item += ` = Rp ${utils.formatRupiah(subtotal)}`;
+
+      baris.push(baris_item);
+    });
+
+    baris.push(`\nTotal: Rp ${utils.formatRupiah(totalHarga)}`);
+    baris.push('\nTerima kasih! 🙏');
+
+    return enc(baris.join('\n'));
+  },
+
   checkout() {
     const dipilih = state.cart.filter(item => this._checkedIds.has(item.id));
 
@@ -292,41 +306,20 @@ export const Cart = {
       return;
     }
 
-    let pesan = '*Halo, saya ingin memesan:*%0A%0A';
-
-    dipilih.forEach((item, index) => {
-      const hargaBayar = item.hargaBayar ?? item.harga;
-      const subtotal   = hargaBayar * item.quantity;
-      pesan += `${index + 1}. ${item.nama}`;
-      if (item.diskon) pesan += ` *(Diskon ${item.diskon}%)*`;
-      if (item.quantity > 1) pesan += ` x${item.quantity}`;
-      pesan += `%0A   Rp ${utils.formatRupiah(hargaBayar)}`;
-      if (item.quantity > 1) pesan += ` = Rp ${utils.formatRupiah(subtotal)}`;
-      pesan += '%0A%0A';
-    });
-
-    pesan += `*Total: Rp ${utils.formatRupiah(this.hitungTotal())}*%0A%0A`;
-    pesan += 'Terima kasih! 🙏';
-
+    const pesan = this._buatPesanWA(dipilih, this.hitungTotal());
     window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${pesan}`, '_blank');
     Toast.success('Mengarahkan ke WhatsApp...');
     Sound.checkout();
   },
 
-  /**
-   * checkoutLangsung — Beli 1 produk langsung tanpa ke keranjang.
-   */
   checkoutLangsung(produk) {
     const hargaBayar = hargaSetelahDiskon(produk);
-    let pesan = `*Halo, saya ingin membeli:*%0A%0A`;
-    pesan += `1. ${produk.nama}`;
-    if (produk.diskon) pesan += ` *(Diskon ${produk.diskon}%)*`;
-    pesan += `%0A   Rp ${utils.formatRupiah(hargaBayar)}%0A%0A`;
-    pesan += `*Total: Rp ${utils.formatRupiah(hargaBayar)}*%0A%0A`;
-    pesan += 'Terima kasih! 🙏';
+    const pesan      = this._buatPesanWA(
+      [{ ...produk, hargaBayar, quantity: 1 }],
+      hargaBayar
+    );
     window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${pesan}`, '_blank');
     Toast.success('Mengarahkan ke WhatsApp...');
     Sound.checkout();
   }
 };
-

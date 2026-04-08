@@ -81,22 +81,32 @@ export const Wishlist = {
       return;
     }
 
-    konten.innerHTML = state.wishlist.map(item => `
-      <div class="cart-item">
-        <img src="${item.gambar}" alt="${item.nama}" class="cart-item-image"
-             onerror="this.src='https://via.placeholder.com/80?text=No+Image'">
-        <div class="cart-item-details">
-          <div class="cart-item-name">${item.nama}</div>
-          <div class="cart-item-price">Rp ${utils.formatRupiah(item.harga)}</div>
-          <div class="cart-item-controls" style="margin-top: 8px;">
-            <button class="btn btn-primary"
-                    onclick="Cart.tambah(${JSON.stringify(item).replace(/"/g, '&quot;')}); Wishlist.render();">
-              <span>+ Keranjang</span>
-            </button>
+    konten.innerHTML = state.wishlist.map(item => {
+      const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+      return `
+        <div class="cart-item">
+          <img src="${item.gambar}" alt="${item.nama}" class="cart-item-image"
+               onerror="this.src='https://via.placeholder.com/80?text=No+Image'">
+          <div class="cart-item-details">
+            <div class="cart-item-name">${item.nama}</div>
+            <div class="cart-item-price">Rp ${utils.formatRupiah(item.harga)}</div>
+            <div class="cart-item-controls" style="margin-top: 8px; gap: 6px;">
+              <button class="btn btn-primary btn-sm"
+                      onclick="if(window.Cart){ Cart.tambah(${itemJSON}); Wishlist.render(); }">
+                <span>+ Keranjang</span>
+              </button>
+              <button class="btn btn-checkout btn-sm"
+                      onclick="if(window.Cart){ Cart.checkoutLangsung(${itemJSON}); }">
+                <span>⚡ Beli</span>
+              </button>
+              <button class="remove-btn"
+                      onclick="Wishlist.toggle(${itemJSON}); Wishlist.render();"
+                      title="Hapus dari favorit">×</button>
+            </div>
           </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   },
 
   /** Pasang semua event listener untuk modal favorit */
